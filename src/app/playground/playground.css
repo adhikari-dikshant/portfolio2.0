@@ -1,0 +1,46 @@
+.playground-page {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: var(--base-100);
+}
+
+.playground-header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.playground-header h1 {
+    font-family: "Big Shoulders Display";
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: var(--base-500);
+}
+
+.playground-header p {
+    font-family: "PP Neue Montreal";
+    font-size: 1.1rem;
+    color: var(--base-400);
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.playground-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+    .playground-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .playground-grid {
+        grid-template-columns: 1fr;
+    }
+}

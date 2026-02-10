@@ -1,0 +1,77 @@
+.playground-item {
+    background: #f2f2f2;
+    /* Lighter than base-100 to pop, or match reference grey */
+    border: none;
+    border-radius: 0.5em;
+    /* More rounded as per reference */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    /* Slightly shorter, more compact */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding: 0.5em;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.playground-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.playground-item-preview {
+    border-radius: 0.5em;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e5e5e5;
+    /* Placeholder bg for preview area */
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.playground-item-info {
+    padding: 1rem 0;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover effect on info panel removed/simplified */
+.playground-item:hover .playground-item-info {
+    background: #f2f2f2;
+}
+
+.playground-item-info h3 {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.95rem;
+    /* Smaller, cleaner */
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 0.25rem 0;
+    letter-spacing: -0.01em;
+}
+
+.playground-item-tag {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+    /* Muted text */
+    text-transform: none;
+    /* Reference has normal case/sentence case often */
+    font-weight: 400;
+}
+
+.playground-item.span-2 {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .playground-item.span-2 {
+        grid-column: span 1;
+    }
+}

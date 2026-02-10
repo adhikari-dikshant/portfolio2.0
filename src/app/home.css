@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    background-color: var(--base-100);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .container .hero-content-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero .container .hero-content-main h1 {
+    font-weight: 900;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    font-size: 12vw;
+}
+
+.hero .container .hero-content-main h1:nth-child(1) {
+    align-self: flex-start;
+    margin-left: 15%;
+    margin-bottom: 1.5rem;
+}
+
+.hero .container .hero-content-main h1:nth-child(2) {
+    align-self: flex-end;
+    margin-right: 15%;
+}
+
+.hero .container .hero-content-main h1 span {
+    font-family: "Playfair Display";
+    font-style: italic;
+    font-size: 5.5rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    z-index: 3;
+    text-transform: lowercase;
+}
+
+@media (max-width: 768px) {
+    .hero .container .hero-content-main h1 span {
+        font-size: 3.5rem;
+    }
+}
+
+.trail-img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    transform-origin: center;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.featured-work {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 8rem 0 6rem 0;
+    background-color: var(--base-100);
+    overflow: hidden;
+}
+
+.featured-work .featured-work-header-content {
+    margin: 0 auto;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    text-align: center;
+}
+
+.featured-work .featured-work-header {
+    width: 50%;
+}
+
+.featured-work .featured-work-header-content .arrow {
+    width: 3rem;
+}
+
+.featured-work .featured-work-header-content .featured-work-header-copy {
+    width: 50%;
+}
+
+.client-reviews-header-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--base-100);
+    overflow: hidden;
+}
+
+.client-reviews-header-container .client-reviews-header-content {
+    margin: 0 auto;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    text-align: center;
+}
+
+.client-reviews-header-container .client-reviews-header {
+    width: 50%;
+}
+
+.client-reviews-header-container .client-reviews-header-content .arrow {
+    width: 3rem;
+}
+
+.client-reviews-header-container .client-reviews-header-content .client-reviews-header-copy {
+    width: 50%;
+}
+
+@media (max-width: 1000px) {
+
+    .hero .container .hero-content-main,
+    .hero .container .hero-content-main .hero-footer {
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .featured-work .featured-work-header,
+    .featured-work .featured-work-header-content,
+    .featured-work .featured-work-header-content .featured-work-header-copy,
+    .client-reviews-header-container .client-reviews-header,
+    .client-reviews-header-container .client-reviews-header-content,
+    .client-reviews-header-container .client-reviews-header-content .client-reviews-header-copy {
+        width: 100%;
+    }
+
+    .featured-work-list {
+        padding: 8rem 0 !important;
+    }
+
+    .featured-work-list .row {
+        width: 100% !important;
+        flex-direction: column;
+    }
+}
