@@ -1,4 +1,4 @@
-# Polite Chaos - Creative Portfolio
+# My Creative Portfolio 2.0 (With Playground in progress)
 
 A personal portfolio website exploring the intersection of structure and creative chaos. Built with Next.js 15, GSAP, and a focus on micro-interactions and typographic hierarchy.
 
@@ -6,11 +6,13 @@ A personal portfolio website exploring the intersection of structure and creativ
 
 - **Dynamic Hero Section**: Interactive typography with mouse-following image trails (`HeroTrail`).
 - **Seamless Page Transitions**: Custom view transitions API integration for smooth navigation.
-- **Interactive Playground**: A gallery of creative coding experiments and UI components (e.g., Magnetic Buttons).
+- **Interactive Playground (WIP)**: A gallery of creative coding experiments and UI components (e.g., Magnetic Buttons).
 - **Project Showcase**: A dynamic "Work" page featuring project case studies with staggered animations.
 - **Custom Design System**:
     - **Typography**: Big Shoulders Display (Headings), PP Neue Montreal (Body), Playfair Display (Accents), Geist Mono (Technical).
     - **Aesthetics**: "Polite Chaos" theme blending brutalist layouts with refined motion.
+- **Performance**: Optimized for fast loading and smooth interactions.
+- **Responsive Design**: Fully responsive layout for all devices.
 
 ## Tech Stack
 
