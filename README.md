@@ -27,8 +27,8 @@ A personal portfolio website exploring the intersection of structure and creativ
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/polite-chaos.git
-    cd polite-chaos
+    git clone https://github.com/yourusername/portfolio-2.0.git
+    cd portfolio-2.0
     ```
 
 2.  **Install dependencies:**
