@@ -82,4 +82,8 @@
     .cta .container {
         gap: 2rem;
     }
+
+    .cta .cta-card .cta-card-copy .cta-card-col-buttons {
+        flex-direction: column;
+    }
 }
