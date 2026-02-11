@@ -199,10 +199,10 @@ const Preloader = () => {
                         <img src="/featured-work/work-3.jpg" alt="" />
                     </div>
                 </div>
-            </div>
 
-            <div className="preloader-header">
-                <h1>Hi, I'm Dikshant</h1>
+                <div className="preloader-header">
+                    <h1>Hi, I'm Dikshant</h1>
+                </div>
             </div>
         </>
     );
