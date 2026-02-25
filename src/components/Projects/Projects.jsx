@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useLenis } from "lenis/react";
+import { projects as projectData } from "@/data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,18 +23,21 @@ export default function Projects() {
     // The original code has some media queries in CSS, but the JS logic seems consistent
     // We will stick to the logic provided
 
-    const projects = [
-        { name: "Human Form Study", img: "/spotlight/spotlight-1.jpg" },
-        { name: "Interior Light", img: "/spotlight/spotlight-2.jpg" },
-        { name: "Project 21", img: "/spotlight/spotlight-3.jpg" },
-        { name: "Shadow Portraits", img: "/spotlight/spotlight-4.jpg" },
-        { name: "Everyday Objects", img: "/spotlight/spotlight-5.jpg" },
-        { name: "Unit 07 Care", img: "/spotlight/spotlight-6.jpg" },
-        { name: "Motion Practice", img: "/spotlight/spotlight-7.jpg" },
-        { name: "Noonlight Series", img: "/spotlight/spotlight-8.jpg" },
-        { name: "Material Stillness", img: "/spotlight/spotlight-9.jpg" },
-        { name: "Quiet Walk", img: "/spotlight/spotlight-10.jpg" },
+    const imageSources = [
+        "/spotlight/spotlight-1.jpg",
+        "/spotlight/spotlight-2.jpg",
+        "/spotlight/spotlight-3.jpg",
+        "/spotlight/spotlight-4.jpg",
+        "/spotlight/spotlight-5.jpg",
+        "/spotlight/spotlight-6.jpg",
+        "/spotlight/spotlight-7.jpg",
+        "/spotlight/spotlight-8.jpg",
     ];
+
+    const projects = imageSources.map((img, idx) => ({
+        img,
+        name: projectData[idx]?.name || `Project ${idx + 1}`,
+    }));
 
     useGSAP(
         () => {

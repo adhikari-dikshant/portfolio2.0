@@ -29,7 +29,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 35%;
-    padding: 50svh 0;
+    padding: 25svh 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -67,7 +67,8 @@
 @media (max-width: 1000px) {
     .project-images {
         width: calc(100% - 4rem);
-        gap: 25svh;
+        padding: 20svh 0;
+        gap: 12svh;
     }
 
     .project-names p {

@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useViewTransition } from "@/hooks/useViewTransition";
 import Copy from "@/components/Copy/Copy";
 import Preloader, { isInitialLoad } from "@/components/Preloader/Preloader";
+import { projects } from "@/data/projects";
 
 gsap.registerPlugin(useGSAP);
 
@@ -15,96 +16,26 @@ const Page = () => {
     const workPageContainer = useRef(null);
 
     const workItems = useMemo(
-        () => [
-            {
-                index: "01",
-                name: "Citychild",
-                href: "/sample-project",
-                variant: "variant-1",
-                images: [
-                    "/work/work_1_1.jpg",
-                    "/work/work_1_2.jpg",
-                    "/work/work_1_3.jpg",
-                ],
-            },
-            {
-                index: "02",
-                name: "Chrome Saint",
-                href: "/sample-project",
-                variant: "variant-2",
-                images: [
-                    "/work/work_2_1.jpg",
-                    "/work/work_2_2.jpg",
-                    "/work/work_2_3.jpg",
-                ],
-            },
-            {
-                index: "03",
-                name: "G-Dream",
-                href: "/sample-project",
-                variant: "variant-2",
-                images: [
-                    "/work/work_3_1.jpg",
-                    "/work/work_3_2.jpg",
-                    "/work/work_3_3.jpg",
-                ],
-            },
-            {
-                index: "04",
-                name: "Stoneface",
-                href: "/sample-project",
-                variant: "variant-3",
-                images: [
-                    "/work/work_4_1.jpg",
-                    "/work/work_4_2.jpg",
-                    "/work/work_4_3.jpg",
-                ],
-            },
-            {
-                index: "05",
-                name: "Amber Cloak",
-                href: "/sample-project",
-                variant: "variant-1",
-                images: [
-                    "/work/work_5_1.jpg",
-                    "/work/work_5_2.jpg",
-                    "/work/work_5_3.jpg",
-                ],
-            },
-            {
-                index: "06",
-                name: "Paper Blade",
-                href: "/sample-project",
-                variant: "variant-2",
-                images: [
-                    "/work/work_6_1.jpg",
-                    "/work/work_6_2.jpg",
-                    "/work/work_6_3.jpg",
-                ],
-            },
-            {
-                index: "07",
-                name: "Paper Blade",
-                href: "/sample-project",
-                variant: "variant-2",
-                images: [
-                    "/work/work_7_1.jpg",
-                    "/work/work_7_2.jpg",
-                    "/work/work_7_3.jpg",
-                ],
-            },
-            {
-                index: "08",
-                name: "Paper Blade",
-                href: "/sample-project",
-                variant: "variant-3",
-                images: [
-                    "/work/work_8_1.jpg",
-                    "/work/work_8_2.jpg",
-                    "/work/work_8_3.jpg",
-                ],
-            },
-        ],
+        () => {
+            const variants = ["variant-1", "variant-2", "variant-3", "variant-4"];
+
+            return projects.map((project, index) => {
+                const i = index + 1;
+                const variant = variants[index % variants.length];
+
+                return {
+                    index: i.toString().padStart(2, "0"),
+                    name: project.name,
+                    slug: project.slug,
+                    variant,
+                    images: [
+                        `/work/work_${i}_1.jpg`,
+                        `/work/work_${i}_2.jpg`,
+                        `/work/work_${i}_3.jpg`,
+                    ],
+                };
+            });
+        },
         []
     );
 
@@ -237,10 +168,10 @@ const Page = () => {
                         {workItems.slice(rowIndex * 2, rowIndex * 2 + 2).map((item) => (
                             <a
                                 key={item.index}
-                                href={item.href}
+                                href={`/work/${item.slug}`}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    navigateWithTransition(item.href);
+                                    navigateWithTransition(`/work/${item.slug}`);
                                 }}
                             >
                                 <div className={`folder ${item.variant}`}>

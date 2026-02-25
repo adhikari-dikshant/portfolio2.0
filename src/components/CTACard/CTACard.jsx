@@ -68,7 +68,7 @@ const CTACard = () => {
                                     See How I Work
                                 </Button>
 
-                                <Button
+                                {/* <Button
                                     animateOnScroll={true}
                                     delay={0.25}
                                     variant="light"
@@ -76,7 +76,7 @@ const CTACard = () => {
                                     href="/work"
                                 >
                                     Explore Playground
-                                </Button>
+                                </Button> */}
                             </div>
                         </div>
                     </div>
