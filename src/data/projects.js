@@ -5,6 +5,7 @@ export const projects = [
     {
         slug: "open-blood",
         name: "Open Blood",
+        liveUrl: "https://openblood.app/",
         hero: {
             eyebrow: "Healthcare Technology",
             title: "Open Blood Platform",
@@ -59,6 +60,7 @@ export const projects = [
     {
         slug: "nebbula-coworking",
         name: "Nebbula Space",
+        liveUrl: "https://nebbulacoworking.com/",
         hero: {
             eyebrow: "Premium Workspace Experience",
             title: "Nebbula Coworking",
@@ -113,6 +115,7 @@ export const projects = [
     {
         slug: "primark-india",
         name: "Primark",
+        liveUrl: "primarkindia.in/lp",
         hero: {
             eyebrow: "Experience Centre Website",
             title: "Primark India",
@@ -167,6 +170,7 @@ export const projects = [
     {
         slug: "solo-clinic-ivf",
         name: "Solo Clinic IVF",
+        liveUrl: "https://soloclinicivf.com/lp",
         hero: {
             eyebrow: "Healthcare Landing Experience",
             title: "Solo Clinic IVF",
@@ -221,6 +225,7 @@ export const projects = [
     {
         slug: "am-circle-pvt-ltd",
         name: "AM Circle Pvt. Ltd.",
+        liveUrl: "https://www.acplraj.in/",
         hero: {
             eyebrow: "Industrial Automation Website",
             title: "AM Circle Pvt. Ltd.",
@@ -275,6 +280,7 @@ export const projects = [
     {
         slug: "asquarefx-studios",
         name: "AsquareFX Studios",
+        liveUrl: "https://www.asquarefxstudios.com/",
         hero: {
             eyebrow: "Creative Studio Experience",
             title: "AsquareFX Animation & VFX",
@@ -329,6 +335,7 @@ export const projects = [
     {
         slug: "danish-powers",
         name: "Danish Powers",
+        liveUrl: "https://www.figma.com/proto/5OoAPLSNEtEdyfB1kBUjzp/danish-powers?node-id=1-2&t=pmqb1pprplm72ecF-8&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
         hero: {
             eyebrow: "Official Website Redesign Proposal",
             title: "Danish Powers",
@@ -383,6 +390,7 @@ export const projects = [
     {
         slug: "my-dear-tiger",
         name: "My Dear Tiger",
+        liveUrl: "https://www.figma.com/proto/DM5TtPqdcIMwCwI8CEd1XI/tiger?node-id=8-2402&t=TjNwZGr7chkoCUef-8&scaling=scale-down-width&content-scaling=fixed&page-id=5%3A2400&starting-point-node-id=8%3A2402&hide-ui=1",
         hero: {
             eyebrow: "Official Website Redesign Proposal",
             title: "Wildlife Storytelling Experience",

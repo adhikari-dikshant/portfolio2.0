@@ -20,15 +20,29 @@ const ProjectPage = async ({ params }) => {
     }
 
     const nextProject = projects[(projectIndex + 1) % projects.length];
-    const { hero, metaBar, sections, images = {} } = project;
+    const { hero, metaBar, sections, images = {}, liveUrl } = project;
 
     return (
         <div className="project-page">
             {/* ── HERO ── */}
             <section className="project-header">
                 <Copy delay={0.75}>
-                    {hero.eyebrow && <p className="lg">{hero.eyebrow}</p>}
-                    <h1>{hero.title}</h1>
+                    <>
+                        {hero.eyebrow && <p className="lg">{hero.eyebrow}</p>}
+                        <div className="project-hero-heading">
+                            <h1>{hero.title}</h1>
+                            {liveUrl && (
+                                <a
+                                    href={liveUrl}
+                                    className="project-hero-live-btn"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View live site ↗
+                                </a>
+                            )}
+                        </div>
+                    </>
                 </Copy>
             </section>
 
@@ -141,11 +155,23 @@ const ProjectPage = async ({ params }) => {
                 <a href="/work" className="project-nav-link">
                     ← Back to work
                 </a>
-                {nextProject && (
-                    <a href={`/work/${nextProject.slug}`} className="project-nav-link">
-                        Next project →{/*  */} {nextProject.hero.title}
-                    </a>
-                )}
+                <div className="project-nav-right">
+                    {liveUrl && (
+                        <a
+                            href={liveUrl}
+                            className="project-nav-link external"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Visit live site ↗
+                        </a>
+                    )}
+                    {nextProject && (
+                        <a href={`/work/${nextProject.slug}`} className="project-nav-link">
+                            Next project → {nextProject.hero.title}
+                        </a>
+                    )}
+                </div>
             </div>
 
             <Footer />
