@@ -7,7 +7,7 @@ nav {
     color: var(--base-100);
     display: flex;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 9999999;
 }
 
 nav .nav-logo a {
@@ -52,7 +52,7 @@ nav .close-label {
     overflow: hidden;
     background-color: var(--base-400);
     color: var(--base-100);
-    z-index: 1;
+    z-index: 9999998;
     will-change: clip-path;
 }
 
@@ -197,8 +197,8 @@ nav .nav-toggle-wrapper {
     background-color: var(--base-200);
     border-radius: 0.5rem;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    z-index: 2;
     cursor: pointer;
+    z-index: 9999999;
 }
 
 nav .open-label,
