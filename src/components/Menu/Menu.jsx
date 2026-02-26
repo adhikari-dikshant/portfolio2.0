@@ -315,6 +315,59 @@ const Menu = ({ pageRef }) => {
         }
     }, [lenis, isMenuOpen]);
 
+    const closeMenuInstant = () => {
+        if (!isMenuOpen) return;
+
+        const menuOverlay = menuOverlayRef.current;
+        const menuImage = menuImageRef.current;
+        const menuLinks = menuLinksRef.current;
+        const linkHighlighter = linkHighlighterRef.current;
+        const menuLinksWrapper = menuLinksWrapperRef.current;
+        const menuCols = menuColsRef.current;
+
+        gsap.killTweensOf([
+            menuOverlay,
+            menuImage,
+            menuLinks,
+            linkHighlighter,
+        ]);
+
+        if (menuOverlay) {
+            gsap.set(menuOverlay, {
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+            });
+        }
+
+        if (menuLinks) {
+            gsap.set(menuLinks, { y: "150%" });
+        }
+
+        if (linkHighlighter) {
+            gsap.set(linkHighlighter, { y: "150%" });
+        }
+
+        if (menuImage) {
+            gsap.set(menuImage, { y: "0", scale: 0.5, opacity: 0.25 });
+        }
+
+        if (menuCols) {
+            menuCols.forEach((col) => {
+                if (!col) return;
+                const splitLines = col.querySelectorAll(".split-line");
+                gsap.set(splitLines, { y: "100%" });
+            });
+        }
+
+        if (menuLinksWrapper) {
+            gsap.set(menuLinksWrapper, { x: 0 });
+        }
+        currentX.current = 0;
+        targetX.current = 0;
+
+        setIsMenuOpen(false);
+        setIsMenuAnimating(false);
+    };
+
     const toggleMenu = () => {
         if (isMenuAnimating) return;
         setIsMenuAnimating(true);
@@ -464,7 +517,7 @@ const Menu = ({ pageRef }) => {
                             if (currentPath === "/") {
                                 return;
                             }
-                            navigateWithTransition("/", isMenuOpen ? toggleMenu : null);
+                            navigateWithTransition("/", isMenuOpen ? closeMenuInstant : null);
                         }}
                     >
                         <img src="/favicon.svg" width={24} height={24} alt="" />
@@ -577,13 +630,13 @@ const Menu = ({ pageRef }) => {
                                 const currentPath = window.location.pathname;
                                 if (currentPath === item.route) {
                                     if (isMenuOpen) {
-                                        toggleMenu();
+                                        closeMenuInstant();
                                     }
                                     return;
                                 }
                                 navigateWithTransition(
                                     item.route,
-                                    isMenuOpen ? toggleMenu : null
+                                    isMenuOpen ? closeMenuInstant : null
                                 );
                             }}
                         >
