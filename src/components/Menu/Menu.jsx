@@ -324,6 +324,8 @@ const Menu = ({ pageRef }) => {
         const linkHighlighter = linkHighlighterRef.current;
         const menuLinksWrapper = menuLinksWrapperRef.current;
         const menuCols = menuColsRef.current;
+        const openLabel = openLabelRef.current;
+        const closeLabel = closeLabelRef.current;
 
         gsap.killTweensOf([
             menuOverlay,
@@ -363,6 +365,14 @@ const Menu = ({ pageRef }) => {
         }
         currentX.current = 0;
         targetX.current = 0;
+
+        // Reset labels so "Menu" is visible again
+        if (openLabel) {
+            gsap.set(openLabel, { y: "0%" });
+        }
+        if (closeLabel) {
+            gsap.set(closeLabel, { y: "0%" });
+        }
 
         setIsMenuOpen(false);
         setIsMenuAnimating(false);
