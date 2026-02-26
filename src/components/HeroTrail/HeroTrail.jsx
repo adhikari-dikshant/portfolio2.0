@@ -25,7 +25,7 @@ const HeroTrail = () => {
         // Images
         const imgs = Array.from(
             { length: config.imageCount },
-            (_, i) => `/spotlight/spotlight-${i + 1}.jpg`
+            (_, i) => `/spotlight/spotlight-${i + 1}.webp`
         );
 
         const trail = [];

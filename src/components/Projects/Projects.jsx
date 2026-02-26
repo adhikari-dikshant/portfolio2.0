@@ -24,14 +24,14 @@ export default function Projects() {
     // We will stick to the logic provided
 
     const imageSources = [
-        "/spotlight/spotlight-1.jpg",
-        "/spotlight/spotlight-2.jpg",
-        "/spotlight/spotlight-3.jpg",
-        "/spotlight/spotlight-4.jpg",
-        "/spotlight/spotlight-5.jpg",
-        "/spotlight/spotlight-6.jpg",
-        "/spotlight/spotlight-7.jpg",
-        "/spotlight/spotlight-8.jpg",
+        "/spotlight/spotlight-11.webp",
+        "/spotlight/spotlight-9.webp",
+        "/spotlight/spotlight-13.webp",
+        "/spotlight/spotlight-16.webp",
+        "/spotlight/spotlight-1.webp",
+        "/spotlight/spotlight-4.webp",
+        "/spotlight/spotlight-5.webp",
+        "/spotlight/spotlight-8.webp",
     ];
 
     const projects = imageSources.map((img, idx) => ({

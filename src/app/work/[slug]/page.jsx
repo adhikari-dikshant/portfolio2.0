@@ -20,7 +20,7 @@ const ProjectPage = async ({ params }) => {
     }
 
     const nextProject = projects[(projectIndex + 1) % projects.length];
-    const { hero, metaBar, sections, images } = project;
+    const { hero, metaBar, sections, images = {} } = project;
 
     return (
         <div className="project-page">

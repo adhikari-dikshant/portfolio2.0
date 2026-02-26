@@ -51,7 +51,7 @@ const Page = () => {
                             resolve();
                         }
                     };
-                    img.src = `/objects/obj-${i}.png`;
+                    img.src = `/objects/obj-${i}.webp`;
                     preloadedImages.push(img);
                 }
             });
@@ -108,13 +108,13 @@ const Page = () => {
 
             screensaverElement.style.width = `${config.size}px`;
             screensaverElement.style.height = `${config.size}px`;
-            screensaverElement.style.backgroundImage = `url(/objects/obj-${currentImageIndex}.png)`;
+            screensaverElement.style.backgroundImage = `url(/objects/obj-${currentImageIndex}.webp)`;
             screensaverElement.style.left = `${posX}px`;
             screensaverElement.style.top = `${posY}px`;
 
             const changeImage = () => {
                 currentImageIndex = (currentImageIndex % config.imageCount) + 1;
-                screensaverElement.style.backgroundImage = `url(/objects/obj-${currentImageIndex}.png)`;
+                screensaverElement.style.backgroundImage = `url(/objects/obj-${currentImageIndex}.webp)`;
             };
 
             let canChangeDirection = true;

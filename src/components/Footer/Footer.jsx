@@ -27,7 +27,7 @@ const Footer = () => {
     const imageParticleCount = 10;
     const imagePaths = Array.from(
         { length: imageParticleCount },
-        (_, i) => `/objects/obj-${i + 1}.png`
+        (_, i) => `/objects/obj-${i + 1}.webp`
     );
 
     useEffect(() => {

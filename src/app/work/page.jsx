@@ -29,9 +29,9 @@ const Page = () => {
                     slug: project.slug,
                     variant,
                     images: [
-                        `/work/work_${i}_1.jpg`,
-                        `/work/work_${i}_2.jpg`,
-                        `/work/work_${i}_3.jpg`,
+                        `/work/work_${i}_1.webp`,
+                        `/work/work_${i}_2.webp`,
+                        `/work/work_${i}_3.webp`,
                     ],
                 };
             });

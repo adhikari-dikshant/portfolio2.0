@@ -1,6 +1,4 @@
 export const projects = [
-
-
     // =========================
     // OPEN BLOOD
     // =========================
@@ -10,7 +8,7 @@ export const projects = [
         hero: {
             eyebrow: "Healthcare Technology",
             title: "Open Blood Platform",
-            bannerImage: "/project/openblood-1.jpg",
+            bannerImage: "/project/openblood-1.webp",
         },
         metaBar: [
             { label: "Role", value: "Product Designer & Frontend Developer" },
@@ -48,7 +46,11 @@ export const projects = [
                 heading: "Impact Ready",
                 body: "The final product delivers an intuitive ecosystem connecting donors and blood banks, making emergency response faster while improving donor engagement."
             }
-        }
+        },
+        images: {
+            full: ["/project/openblood-2.webp", "/project/openblood-3.webp"],
+            twoUp: ["/project/openblood-4.webp", "/project/openblood-5.webp"],
+        },
     },
 
     // =========================
@@ -60,7 +62,7 @@ export const projects = [
         hero: {
             eyebrow: "Premium Workspace Experience",
             title: "Nebbula Coworking",
-            bannerImage: "/project/nebbula-1.jpg",
+            bannerImage: "/project/nebbula-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -98,7 +100,11 @@ export const projects = [
                 heading: "Result Driven",
                 body: "The final experience positions Nebbula as a premium brand, combining aesthetic credibility with clear CTAs that drive workspace inquiries and bookings."
             }
-        }
+        },
+        images: {
+            full: ["/project/nebbula-2.webp", "/project/nebbula-3.webp"],
+            twoUp: ["/project/nebbula-4.webp", "/project/nebbula-5.webp"],
+        },
     },
 
     // =========================
@@ -109,8 +115,8 @@ export const projects = [
         name: "Primark",
         hero: {
             eyebrow: "Experience Centre Website",
-            title: "Primark Interior & Exterior Panels",
-            bannerImage: "/project/primark-1.jpg",
+            title: "Primark India",
+            bannerImage: "/project/primark-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -150,8 +156,8 @@ export const projects = [
             },
         },
         images: {
-            full: ["/project/primark-2.jpg", "/project/primark-3.jpg"],
-            twoUp: ["/project/primark-4.jpg", "/project/primark-5.jpg"],
+            full: ["/project/primark-2.webp", "/project/primark-3.webp"],
+            twoUp: ["/project/primark-4.webp", "/project/primark-5.webp"],
         },
     },
 
@@ -163,8 +169,8 @@ export const projects = [
         name: "Solo Clinic IVF",
         hero: {
             eyebrow: "Healthcare Landing Experience",
-            title: "Solo Clinic IVF & Women’s Health",
-            bannerImage: "/project/solo-1.jpg",
+            title: "Solo Clinic IVF",
+            bannerImage: "/project/solo-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -204,8 +210,8 @@ export const projects = [
             },
         },
         images: {
-            full: ["/project/solo-2.jpg", "/project/solo-3.jpg"],
-            twoUp: ["/project/solo-4.jpg", "/project/solo-5.jpg"],
+            full: ["/project/solo-2.webp", "/project/solo-3.webp"],
+            twoUp: ["/project/solo-4.webp", "/project/solo-5.webp"],
         },
     },
 
@@ -213,12 +219,12 @@ export const projects = [
     // ACPL INDIA
     // =========================
     {
-        slug: "acpl-industrial",
-        name: "ACPL India",
+        slug: "am-circle-pvt-ltd",
+        name: "AM Circle Pvt. Ltd.",
         hero: {
             eyebrow: "Industrial Automation Website",
-            title: "ACPL Machine Automation",
-            bannerImage: "/project/acpl-1.jpg",
+            title: "AM Circle Pvt. Ltd.",
+            bannerImage: "/project/acpl-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -258,8 +264,8 @@ export const projects = [
             },
         },
         images: {
-            full: ["/project/acpl-2.jpg", "/project/acpl-3.jpg"],
-            twoUp: ["/project/acpl-4.jpg", "/project/acpl-5.jpg"],
+            full: ["/project/acpl-2.webp", "/project/acpl-3.webp"],
+            twoUp: ["/project/acpl-4.webp", "/project/acpl-5.webp"],
         },
     },
 
@@ -272,7 +278,7 @@ export const projects = [
         hero: {
             eyebrow: "Creative Studio Experience",
             title: "AsquareFX Animation & VFX",
-            bannerImage: "/project/asquarefx-1.jpg",
+            bannerImage: "/project/asq-1.gif",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -312,8 +318,8 @@ export const projects = [
             },
         },
         images: {
-            full: ["/project/asquarefx-2.jpg", "/project/asquarefx-3.jpg"],
-            twoUp: ["/project/asquarefx-4.jpg", "/project/asquarefx-5.jpg"],
+            full: ["/project/asq-2.gif", "/project/asq-3.gif"],
+            twoUp: ["/project/asq-4.webp", "/project/asq-5.webp"],
         },
     },
 
@@ -325,8 +331,8 @@ export const projects = [
         name: "Danish Powers",
         hero: {
             eyebrow: "Official Website Redesign Proposal",
-            title: "Danish — Powering Progress",
-            bannerImage: "/project/danish-1.jpg",
+            title: "Danish Powers",
+            bannerImage: "/project/danish-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -366,8 +372,8 @@ export const projects = [
             },
         },
         images: {
-            full: ["/project/danish-2.jpg", "/project/danish-3.jpg"],
-            twoUp: ["/project/danish-4.jpg", "/project/danish-5.jpg"],
+            full: ["/project/danish-2.webp", "/project/danish-3.webp"],
+            twoUp: ["/project/danish-4.webp", "/project/danish-5.webp"],
         },
     },
 
@@ -380,7 +386,7 @@ export const projects = [
         hero: {
             eyebrow: "Official Website Redesign Proposal",
             title: "Wildlife Storytelling Experience",
-            bannerImage: "/project/mdt-1.jpg",
+            bannerImage: "/project/mdt-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
@@ -420,8 +426,8 @@ export const projects = [
             },
         },
         images: {
-            full: ["/project/mdt-2.jpg", "/project/mdt-3.jpg"],
-            twoUp: ["/project/mdt-4.jpg", "/project/mdt-5.jpg"],
+            full: ["/project/mdt-2.webp", "/project/mdt-3.webp"],
+            twoUp: ["/project/mdt-4.webp", "/project/mdt-5.webp"],
         },
     },
 

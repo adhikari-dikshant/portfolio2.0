@@ -35,7 +35,6 @@ const Menu = ({ pageRef }) => {
         { label: "Home", route: "/" },
         { label: "Work", route: "/work" },
         { label: "Playground", route: "/playground" },
-        { label: "Stories", route: "/stories" },
         { label: "Contact", route: "/contact" },
     ];
 
@@ -560,7 +559,7 @@ const Menu = ({ pageRef }) => {
                 </div>
 
                 <div className="menu-img">
-                    {/* <img ref={menuImageRef} src="/menu/menu_img.jpg" alt="" /> */}
+                    {/* <img ref={menuImageRef} src="/menu/menu_img.webp" alt="" /> */}
                     <iframe ref={menuImageRef} height={300} className='rounded' src="https://player.vimeo.com/video/1012871121?autoplay=1&amp;muted=1&amp;loop=1&amp;background=1&amp;dnt=1&amp;api=1" data-src="https://player.vimeo.com/video/1012871121?autoplay=1&amp;muted=1&amp;loop=1&amp;background=1&amp;dnt=1&amp;api=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowFullScreen="" data-ot-ignore="" loading="lazy" data-ready="true"></iframe>
 
                 </div>
