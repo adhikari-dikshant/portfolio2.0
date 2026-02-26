@@ -15,7 +15,7 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     will-change: clip-path;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 99999999;
 }
 
 .progress-bar {
@@ -79,7 +79,7 @@
     transform: translateY(60svh);
     transform-origin: top;
     will-change: transform;
-    z-index: 10000;
+    z-index: 99999999;
 }
 
 .preloader-header h1 {
