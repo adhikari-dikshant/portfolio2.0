@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useViewTransition } from "@/hooks/useViewTransition";
 import Copy from "@/components/Copy/Copy";
-import Preloader, { isInitialLoad } from "@/components/Preloader/Preloader";
+import { isInitialLoad } from "@/components/Preloader/Preloader";
 import { projects } from "@/data/projects";
 
 gsap.registerPlugin(useGSAP);

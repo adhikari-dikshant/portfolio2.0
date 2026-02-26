@@ -71,7 +71,7 @@
 @media (max-width: 1000px) {
     .contact {
         height: 100%;
-        /* min-height: 150svh; */
+        min-height: 100svh;
         flex-direction: column;
         padding: 8rem 0 2rem 0;
     }
