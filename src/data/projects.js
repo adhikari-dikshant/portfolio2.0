@@ -165,57 +165,57 @@ export const projects = [
     },
 
     // =========================
-    // SOLO CLINIC IVF
+    // MY DEAR TIGER (PROPOSAL)
     // =========================
     {
-        slug: "solo-clinic-ivf",
-        name: "Solo Clinic IVF",
-        liveUrl: "https://soloclinicivf.com/lp",
+        slug: "my-dear-tiger",
+        name: "My Dear Tiger",
+        liveUrl: "https://www.figma.com/proto/DM5TtPqdcIMwCwI8CEd1XI/tiger?node-id=8-2402&t=TjNwZGr7chkoCUef-8&scaling=scale-down-width&content-scaling=fixed&page-id=5%3A2400&starting-point-node-id=8%3A2402&hide-ui=1",
         hero: {
-            eyebrow: "Healthcare Landing Experience",
-            title: "Solo Clinic IVF",
-            bannerImage: "/project/solo-1.webp",
+            eyebrow: "Official Website Redesign Proposal",
+            title: "Wildlife Storytelling Experience",
+            bannerImage: "/project/mdt-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
-            { label: "Category", value: "Medical Landing Page" },
-            { label: "Industry", value: "Healthcare" },
-            { label: "Status", value: "Live" },
+            { label: "Category", value: "Hospitality Experience Website" },
+            { label: "Industry", value: "Wildlife Homestay" },
+            { label: "Status", value: "Design Proposal" },
         ],
         sections: {
             about: {
                 label: "ABOUT THE PROJECT",
                 heading: "Overview",
                 body: [
-                    "Solo Clinic IVF is a fertility and women’s health center. The project focused on creating a trust-first experience that simplifies medical information.",
-                    "The design blends professional credibility with calm visual language to support patient decision-making."
+                    "A redesign proposal transforming the brand into a story-led digital experience rooted in wildlife and heritage.",
+                    "The design moves away from tourism templates toward cinematic storytelling."
                 ],
-                tagsLine: "Healthcare UX · Landing Page Design · Frontend Development",
+                tagsLine: "Experience Design · Editorial UI · Storytelling UX",
             },
             challenge: {
                 heading: "Challenge & Solution",
-                body: "Balancing emotional reassurance with informational clarity was key. The solution relied on clean typography, strong hierarchy, and consultation-driven CTAs."
+                body: "The challenge was turning informational content into emotional narrative. Typography, layered imagery, and layout rhythm solved this."
             },
             process: {
                 heading: "Our Process",
-                body: "I handled UX planning, visual design, and full frontend implementation with focus on accessibility and readability.",
+                body: "The redesign focused on narrative flow while maintaining frontend feasibility.",
                 listItems: [
-                    "Healthcare UX Planning",
-                    "Trust-driven UI Design",
-                    "Information Structuring",
-                    "Responsive Development",
-                    "Conversion Optimization",
+                    "Experience Mapping",
+                    "Editorial Layout Exploration",
+                    "Typography Direction",
+                    "Interactive Prototyping",
+                    "Frontend-ready Planning",
                 ],
             },
             result: {
                 label: "THE RESULT",
-                heading: "Trust & Conversion Balanced",
-                body: "The final experience communicates credibility while guiding visitors naturally toward consultations."
+                heading: "A Story-led Digital Experience",
+                body: "A premium, emotionally rich concept aligning the digital presence with the brand’s wildlife identity."
             },
         },
         images: {
-            full: ["/project/solo-2.webp", "/project/solo-3.webp"],
-            twoUp: ["/project/solo-4.webp", "/project/solo-5.webp"],
+            full: ["/project/mdt-2.webp", "/project/mdt-3.webp"],
+            twoUp: ["/project/mdt-4.webp", "/project/mdt-5.webp"],
         },
     },
 
@@ -384,59 +384,59 @@ export const projects = [
         },
     },
 
+
     // =========================
-    // MY DEAR TIGER (PROPOSAL)
+    // SOLO CLINIC IVF
     // =========================
     {
-        slug: "my-dear-tiger",
-        name: "My Dear Tiger",
-        liveUrl: "https://www.figma.com/proto/DM5TtPqdcIMwCwI8CEd1XI/tiger?node-id=8-2402&t=TjNwZGr7chkoCUef-8&scaling=scale-down-width&content-scaling=fixed&page-id=5%3A2400&starting-point-node-id=8%3A2402&hide-ui=1",
+        slug: "solo-clinic-ivf",
+        name: "Solo Clinic IVF",
+        liveUrl: "https://soloclinicivf.com/lp",
         hero: {
-            eyebrow: "Official Website Redesign Proposal",
-            title: "Wildlife Storytelling Experience",
-            bannerImage: "/project/mdt-1.webp",
+            eyebrow: "Healthcare Landing Experience",
+            title: "Solo Clinic IVF",
+            bannerImage: "/project/solo-1.webp",
         },
         metaBar: [
             { label: "Role", value: "UI/UX Designer & Frontend Developer" },
-            { label: "Category", value: "Hospitality Experience Website" },
-            { label: "Industry", value: "Wildlife Homestay" },
-            { label: "Status", value: "Design Proposal" },
+            { label: "Category", value: "Medical Landing Page" },
+            { label: "Industry", value: "Healthcare" },
+            { label: "Status", value: "Live" },
         ],
         sections: {
             about: {
                 label: "ABOUT THE PROJECT",
                 heading: "Overview",
                 body: [
-                    "A redesign proposal transforming the brand into a story-led digital experience rooted in wildlife and heritage.",
-                    "The design moves away from tourism templates toward cinematic storytelling."
+                    "Solo Clinic IVF is a fertility and women’s health center. The project focused on creating a trust-first experience that simplifies medical information.",
+                    "The design blends professional credibility with calm visual language to support patient decision-making."
                 ],
-                tagsLine: "Experience Design · Editorial UI · Storytelling UX",
+                tagsLine: "Healthcare UX · Landing Page Design · Frontend Development",
             },
             challenge: {
                 heading: "Challenge & Solution",
-                body: "The challenge was turning informational content into emotional narrative. Typography, layered imagery, and layout rhythm solved this."
+                body: "Balancing emotional reassurance with informational clarity was key. The solution relied on clean typography, strong hierarchy, and consultation-driven CTAs."
             },
             process: {
                 heading: "Our Process",
-                body: "The redesign focused on narrative flow while maintaining frontend feasibility.",
+                body: "I handled UX planning, visual design, and full frontend implementation with focus on accessibility and readability.",
                 listItems: [
-                    "Experience Mapping",
-                    "Editorial Layout Exploration",
-                    "Typography Direction",
-                    "Interactive Prototyping",
-                    "Frontend-ready Planning",
+                    "Healthcare UX Planning",
+                    "Trust-driven UI Design",
+                    "Information Structuring",
+                    "Responsive Development",
+                    "Conversion Optimization",
                 ],
             },
             result: {
                 label: "THE RESULT",
-                heading: "A Story-led Digital Experience",
-                body: "A premium, emotionally rich concept aligning the digital presence with the brand’s wildlife identity."
+                heading: "Trust & Conversion Balanced",
+                body: "The final experience communicates credibility while guiding visitors naturally toward consultations."
             },
         },
         images: {
-            full: ["/project/mdt-2.webp", "/project/mdt-3.webp"],
-            twoUp: ["/project/mdt-4.webp", "/project/mdt-5.webp"],
+            full: ["/project/solo-2.webp", "/project/solo-3.webp"],
+            twoUp: ["/project/solo-4.webp", "/project/solo-5.webp"],
         },
     },
-
 ];
