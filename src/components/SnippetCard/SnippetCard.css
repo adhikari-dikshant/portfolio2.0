@@ -1,0 +1,145 @@
+.snippet-card {
+    background: #f2f2f2;
+    border-radius: 0.5em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.snippet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Preview iframe */
+.snippet-card-preview {
+    height: 220px;
+    background: #e5e5e5;
+    border-radius: 0.4em 0.4em 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.snippet-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Info row */
+.snippet-card-info {
+    padding: 0.85rem 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #f2f2f2;
+}
+
+.snippet-card-meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.snippet-card-title {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+}
+
+.snippet-card-desc {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Tags */
+.snippet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.snippet-tag {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--base-500);
+    background: rgba(255, 110, 20, 0.1);
+    border: 1px solid rgba(255, 110, 20, 0.2);
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+/* View Code toggle button */
+.snippet-code-toggle {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+
+.snippet-code-toggle:hover,
+.snippet-code-toggle.active {
+    background: #1a1a1a;
+    color: #f2f2f2;
+    border-color: #1a1a1a;
+}
+
+/* Code panel */
+.snippet-code-panel {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    background: #1a1a1a;
+}
+
+.snippet-code-tabs {
+    display: flex;
+    gap: 0;
+    background: #111;
+    padding: 0 0.75rem;
+}
+
+.snippet-tab {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #888;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.55rem 0.75rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.snippet-tab.active {
+    color: var(--base-500);
+    border-bottom-color: var(--base-500);
+}
+
+.snippet-code-body {
+    overflow: hidden;
+}
+
+.snippet-code-body pre {
+    overflow-x: auto;
+}
