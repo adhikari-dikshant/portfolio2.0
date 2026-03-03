@@ -2,8 +2,25 @@ import React from "react";
 import "./playground.css";
 import PlaygroundItem from "@/components/PlaygroundItem/PlaygroundItem";
 import MagneticButton from "@/components/Sketches/MagneticButton";
+import SnippetCard from "@/components/SnippetCard/SnippetCard";
+import { supabase } from "@/lib/supabase";
 
-const Playground = () => {
+async function getSnippets() {
+    const { data, error } = await supabase
+        .from("snippets")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        console.error("Failed to fetch snippets:", error.message);
+        return [];
+    }
+    return data || [];
+}
+
+const Playground = async () => {
+    const snippets = await getSnippets();
+
     return (
         <div className="playground-page">
             <div className="container playground-content">
@@ -13,23 +30,18 @@ const Playground = () => {
                 </div>
 
                 <div className="playground-grid">
+                    {/* Static pre-built experiments */}
                     <PlaygroundItem
                         title="Magnetic Button"
                         tag="Interaction / GSAP"
                     >
                         <MagneticButton />
                     </PlaygroundItem>
-                </div>
-            </div>
 
-            <div className="playground-overlay">
-                <div className="playground-overlay-inner">
-                    <p className="sm">Playground</p>
-                    <h2>Coming Soon</h2>
-                    <p>
-                        A space for live prototypes, design explorations, and small experiments.
-                        Stay tuned while we assemble the first batch.
-                    </p>
+                    {/* Dynamic snippets from Supabase */}
+                    {snippets.map((snippet) => (
+                        <SnippetCard key={snippet.id} snippet={snippet} />
+                    ))}
                 </div>
             </div>
         </div>

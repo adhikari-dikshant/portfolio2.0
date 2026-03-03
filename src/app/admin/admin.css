@@ -1,0 +1,389 @@
+/* ── Login ───────────────────────────────────────────────────────────── */
+.admin-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--base-100);
+    padding: 2rem;
+}
+
+.admin-login-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-eyebrow {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.75rem;
+    color: var(--base-500);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.admin-login-title {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--base-400);
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+    line-height: 1;
+}
+
+.admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ── Shared inputs ────────────────────────────────────────────────────── */
+.admin-input {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.9rem;
+    color: var(--base-400);
+    background: #f7f7f5;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.65rem 0.9rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.admin-input:focus {
+    border-color: var(--base-500);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+.admin-btn-primary {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--base-400);
+    color: #f2f2f2;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.admin-btn-primary:hover {
+    opacity: 0.85;
+}
+
+.admin-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-btn-ghost {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--base-400);
+    background: transparent;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.admin-btn-ghost:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.admin-btn-danger {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #c0392b;
+    background: transparent;
+    border: 1.5px solid rgba(192, 57, 43, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.admin-btn-danger:hover {
+    background: rgba(192, 57, 43, 0.07);
+}
+
+/* ── Page layout ──────────────────────────────────────────────────────── */
+.admin-page {
+    min-height: 100vh;
+    background: var(--base-100);
+    padding: 2rem 2.5rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-eyebrow {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.75rem;
+    color: var(--base-500);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.admin-title {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--base-400);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.admin-header-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.admin-message {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.85rem;
+    color: var(--base-500);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+
+.admin-error {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.82rem;
+    color: #c0392b;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────────── */
+.admin-form-wrapper {
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.admin-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.admin-form-header h2 {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--base-400);
+}
+
+.admin-form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.admin-field label {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.admin-label-hint {
+    font-weight: 400;
+    color: #999;
+}
+
+/* Code tabs in form */
+.admin-code-tabs {
+    display: flex;
+    gap: 0;
+    background: #111;
+    border-radius: 0.4rem 0.4rem 0 0;
+    overflow: hidden;
+}
+
+.admin-code-tab {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #888;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.admin-code-tab.active {
+    color: var(--base-500);
+    border-bottom-color: var(--base-500);
+}
+
+.admin-code-editor {
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 0.8rem;
+    color: #f2f2f2;
+    background: #1a1a1a;
+    border: none;
+    border-radius: 0 0 0.4rem 0.4rem;
+    padding: 0.85rem 1rem;
+    width: 100%;
+    min-height: 220px;
+    resize: vertical;
+    outline: none;
+    line-height: 1.6;
+    tab-size: 2;
+}
+
+/* Preview */
+.admin-preview {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-preview-label {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.admin-preview-iframe {
+    width: 100%;
+    height: 340px;
+    border: none;
+    border-radius: 0.5rem;
+    background: #e5e5e5;
+    display: block;
+}
+
+/* ── Snippets list ────────────────────────────────────────────────────── */
+.admin-snippets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.admin-snippet-row {
+    background: #fff;
+    border-radius: 0.6rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s;
+}
+
+.admin-snippet-row:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.admin-snippet-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.admin-snippet-title {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--base-400);
+    margin-bottom: 0.15rem;
+}
+
+.admin-snippet-meta {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.75rem;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-snippet-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.admin-empty {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.9rem;
+    color: #999;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .admin-page {
+        padding: 1.5rem 1.25rem 3rem;
+    }
+
+    .admin-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-preview {
+        position: static;
+    }
+
+    .admin-snippet-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-snippet-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
