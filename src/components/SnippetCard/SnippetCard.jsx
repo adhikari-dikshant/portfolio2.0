@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./SnippetCard.css";
@@ -27,21 +28,20 @@ ${html}
 const TABS = ["html", "css", "js"];
 
 const SnippetCard = ({ snippet }) => {
-    const { title, description, tags = [], html = "", css = "", js = "" } = snippet;
+    const { title, description, tags = [], html = "", css = "", js = "", slug, body } = snippet;
     const [showCode, setShowCode] = useState(false);
     const [activeTab, setActiveTab] = useState("html");
-    const iframeRef = useRef(null);
 
     const srcdoc = buildSrcdoc(html, css, js);
-
     const codeMap = { html, css, js };
     const langMap = { html: "markup", css: "css", js: "javascript" };
+    const slugStr = slug?.current ?? slug;
+    const hasArticle = !!body?.length || !!slugStr;
 
     return (
         <div className="snippet-card">
             <div className="snippet-card-preview">
                 <iframe
-                    ref={iframeRef}
                     srcDoc={srcdoc}
                     sandbox="allow-scripts"
                     title={title}
@@ -62,19 +62,29 @@ const SnippetCard = ({ snippet }) => {
                         onClick={() => setShowCode((v) => !v)}
                         aria-label="Toggle code"
                     >
-                        {showCode ? "Hide Code" : "View Code"}
+                        {showCode ? "Hide" : "Code"}
                     </button>
                 </div>
 
-                {tags.length > 0 && (
-                    <div className="snippet-tags">
-                        {tags.map((tag) => (
-                            <span key={tag} className="snippet-tag">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
+                <div className="snippet-card-footer">
+                    {tags.length > 0 && (
+                        <div className="snippet-tags">
+                            {tags.map((tag) => (
+                                <span key={tag} className="snippet-tag">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+                    {hasArticle && slugStr && (
+                        <Link
+                            href={`/playground/${slugStr}`}
+                            className="snippet-read-link"
+                        >
+                            Read article →
+                        </Link>
+                    )}
+                </div>
             </div>
 
             {showCode && (

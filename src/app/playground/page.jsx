@@ -3,19 +3,16 @@ import "./playground.css";
 import PlaygroundItem from "@/components/PlaygroundItem/PlaygroundItem";
 import MagneticButton from "@/components/Sketches/MagneticButton";
 import SnippetCard from "@/components/SnippetCard/SnippetCard";
-import { supabase } from "@/lib/supabase";
+import { client } from "../../../sanity/lib/client";
+import { allSnippetsQuery } from "../../../sanity/lib/queries";
 
 async function getSnippets() {
-    const { data, error } = await supabase
-        .from("snippets")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-    if (error) {
-        console.error("Failed to fetch snippets:", error.message);
+    try {
+        return await client.fetch(allSnippetsQuery);
+    } catch (err) {
+        console.error("Failed to fetch snippets from Sanity:", err.message);
         return [];
     }
-    return data || [];
 }
 
 const Playground = async () => {
@@ -26,7 +23,7 @@ const Playground = async () => {
             <div className="container playground-content">
                 <div className="playground-header">
                     <h1>Constructed Chaos</h1>
-                    <p>A collection of interactive experiments, motion studies, and UI components.</p>
+                    <p>A collection of interactive experiments, motion studies, and UI components — each with a written breakdown of how it works.</p>
                 </div>
 
                 <div className="playground-grid">
@@ -38,9 +35,9 @@ const Playground = async () => {
                         <MagneticButton />
                     </PlaygroundItem>
 
-                    {/* Dynamic snippets from Supabase */}
+                    {/* Dynamic snippets from Sanity */}
                     {snippets.map((snippet) => (
-                        <SnippetCard key={snippet.id} snippet={snippet} />
+                        <SnippetCard key={snippet._id} snippet={snippet} />
                     ))}
                 </div>
             </div>
