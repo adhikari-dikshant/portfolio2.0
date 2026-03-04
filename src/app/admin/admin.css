@@ -126,7 +126,6 @@
     min-height: 100vh;
     background: var(--base-100);
     padding: 2rem 2.5rem 4rem;
-    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -138,6 +137,7 @@
     padding-top: 3rem;
     flex-wrap: wrap;
     gap: 1rem;
+    text-align: center;
 }
 
 .admin-eyebrow {
@@ -148,6 +148,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-bottom: 0.3rem;
+    padding-top: 5rem;
 }
 
 .admin-title {
@@ -200,6 +201,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--base-400);
+    letter-spacing: normal;
 }
 
 .admin-form-layout {
