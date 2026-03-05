@@ -7,7 +7,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: 320px;
+    height: 370px;
     /* Slightly shorter, more compact */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -41,7 +41,7 @@
 }
 
 .playground-item-info {
-    padding: 1rem 0;
+    padding: 1rem 0 0 0;
     background: #f2f2f2;
     display: flex;
     flex-direction: column;
@@ -61,6 +61,14 @@
     color: #1a1a1a;
     margin: 0 0 0.25rem 0;
     letter-spacing: -0.01em;
+}
+
+.playground-item-description {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.5;
 }
 
 .playground-item-tag {

@@ -197,12 +197,17 @@
     margin-bottom: 2.75rem;
 }
 
-.sd-p {
+.sd-p,
+li {
     font-family: "PP Neue Montreal", sans-serif;
     font-size: 1rem;
     line-height: 1.7;
     color: var(--base-400);
     margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
 }
 
 .sd-h2 {

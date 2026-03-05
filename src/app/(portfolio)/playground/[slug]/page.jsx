@@ -1,3 +1,4 @@
+export const revalidate = 60; // re-fetch from Sanity every 60 seconds
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { client } from "../../../../../sanity/lib/client";

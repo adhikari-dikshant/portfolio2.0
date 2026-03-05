@@ -24,7 +24,7 @@ ${html || ""}
 `;
 
 const SnippetCard = ({ snippet, span = 1 }) => {
-    const { title, tags = [], html = "", css = "", js = "", slug } = snippet;
+    const { title, description, tags = [], html = "", css = "", js = "", slug } = snippet;
     const slugStr = slug?.current ?? slug;
     const srcdoc = buildSrcdoc(html, css, js);
     const tagList = tags.length > 0 ? tags : ["Snippet"];
@@ -41,6 +41,7 @@ const SnippetCard = ({ snippet, span = 1 }) => {
             </div>
             <div className="playground-item-info">
                 <h3>{title}</h3>
+                <p className="playground-item-description">{description}</p>
                 <div className="playground-item-tags">
                     {tagList.map((tag) => (
                         <span key={tag} className="playground-item-tag pill">
