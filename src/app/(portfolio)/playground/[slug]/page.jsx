@@ -45,38 +45,9 @@ export default async function SnippetPage({ params }) {
         <div className="snippet-detail-page">
             <div className="container snippet-detail-container">
                 {/* Back nav */}
-                <Link href="/playground" className="snippet-back">
+                {/* <Link href="/playground" className="snippet-back">
                     ← Back to Playground
-                </Link>
-
-                {/* Header */}
-                <header className="snippet-detail-header">
-                    {snippet.tags?.length > 0 && (
-                        <div className="snippet-detail-tags">
-                            {snippet.tags.map((tag) => (
-                                <span key={tag} className="snippet-detail-tag">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    )}
-                    <h1 className="snippet-detail-title">{snippet.title}</h1>
-                    {snippet.description && (
-                        <p className="snippet-detail-desc">{snippet.description}</p>
-                    )}
-                    {snippet.publishedAt && (
-                        <time className="snippet-detail-date">
-                            {new Date(snippet.publishedAt).toLocaleDateString("en-US", {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric",
-                            })}
-                        </time>
-                    )}
-                </header>
-
-                {/* Interactive client component: preview + code tabs + body */}
-                <SnippetDetail snippet={snippet} />
+                </Link> */}
 
                 {/* Prev / Next */}
                 {adjacent && (adjacent.prev || adjacent.next) && (
@@ -109,6 +80,37 @@ export default async function SnippetPage({ params }) {
                         </div>
                     </nav>
                 )}
+
+                {/* Header */}
+                <header className="snippet-detail-header">
+                    {snippet.tags?.length > 0 && (
+                        <div className="snippet-detail-tags">
+                            {snippet.tags.map((tag) => (
+                                <span key={tag} className="snippet-detail-tag">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+                    <h1 className="snippet-detail-title">{snippet.title}</h1>
+                    {snippet.description && (
+                        <p className="snippet-detail-desc">{snippet.description}</p>
+                    )}
+                    {snippet.publishedAt && (
+                        <time className="snippet-detail-date">
+                            {new Date(snippet.publishedAt).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })}
+                        </time>
+                    )}
+                </header>
+
+                {/* Interactive client component: preview + code tabs + body */}
+                <SnippetDetail snippet={snippet} />
+
+
             </div>
         </div>
     );
