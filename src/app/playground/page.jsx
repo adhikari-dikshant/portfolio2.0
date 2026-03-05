@@ -1,3 +1,5 @@
+export const revalidate = 60; // re-fetch from Sanity every 60 seconds
+
 import React from "react";
 import "./playground.css";
 import PlaygroundItem from "@/components/PlaygroundItem/PlaygroundItem";
