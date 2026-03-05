@@ -93,53 +93,95 @@ const ptComponents = {
 const SnippetDetail = ({ snippet }) => {
     const { html = "", css = "", js = "", body } = snippet;
     const [activeTab, setActiveTab] = useState("html");
+    const [viewMode, setViewMode] = useState("preview");
+    const [copied, setCopied] = useState(false);
 
     const srcdoc = buildSrcdoc(html, css, js);
     const codeMap = { html, css, js };
     const langMap = { html: "markup", css: "css", js: "javascript" };
 
+    const handleCopy = async () => {
+        const text = codeMap[activeTab] || "";
+        await navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+    };
+
     return (
         <div className="sd-wrapper">
-            {/* Live Preview */}
+            {/* Playground surface: preview / code toggle */}
             <div className="sd-preview-block">
-                <p className="sd-block-label">Live Preview</p>
-                <div className="sd-preview">
-                    <iframe
-                        srcDoc={srcdoc}
-                        sandbox="allow-scripts"
-                        title="Live preview"
-                        className="sd-iframe"
-                    />
-                </div>
-            </div>
-
-            {/* Code Tabs */}
-            <div className="sd-code-section">
-                <p className="sd-block-label">Source Code</p>
-                <div className="sd-tabs">
-                    {TABS.map((tab) => (
+                <div className="sd-view-header">
+                    <p className="sd-block-label">Playground</p>
+                    <div className="sd-view-toggle">
                         <button
-                            key={tab}
-                            className={`sd-tab ${activeTab === tab ? "active" : ""}`}
-                            onClick={() => setActiveTab(tab)}
+                            type="button"
+                            className={`sd-view-pill ${viewMode === "preview" ? "active" : ""}`}
+                            onClick={() => setViewMode("preview")}
                         >
-                            {tab.toUpperCase()}
+                            Preview
                         </button>
-                    ))}
+                        <button
+                            type="button"
+                            className={`sd-view-pill ${viewMode === "code" ? "active" : ""}`}
+                            onClick={() => setViewMode("code")}
+                        >
+                            Code
+                        </button>
+                    </div>
                 </div>
-                <SyntaxHighlighter
-                    language={langMap[activeTab]}
-                    style={oneDark}
-                    customStyle={{
-                        margin: 0,
-                        borderRadius: "0 0 0.5rem 0.5rem",
-                        fontSize: "0.82rem",
-                        background: "#1a1a1a",
-                    }}
-                    showLineNumbers
-                >
-                    {codeMap[activeTab] || `/* No ${activeTab} for this snippet */`}
-                </SyntaxHighlighter>
+
+                <div className="sd-preview">
+                    {viewMode === "preview" ? (
+                        <div className="sd-preview-inner">
+                            <iframe
+                                srcDoc={srcdoc}
+                                sandbox="allow-scripts"
+                                title="Live preview"
+                                className="sd-iframe"
+                            />
+                        </div>
+                    ) : (
+                        <div className="sd-code-card">
+                            <div className="sd-tabs-bar">
+                                <div className="sd-tabs">
+                                    {TABS.map((tab) => (
+                                        <button
+                                            key={tab}
+                                            className={`sd-tab ${activeTab === tab ? "active" : ""}`}
+                                            onClick={() => setActiveTab(tab)}
+                                        >
+                                            {tab.toUpperCase()}
+                                        </button>
+                                    ))}
+                                </div>
+                                <button
+                                    type="button"
+                                    className={`sd-copy-btn ${copied ? "copied" : ""}`}
+                                    onClick={handleCopy}
+                                >
+                                    {copied ? "Copied!" : "Copy"}
+                                </button>
+                            </div>
+                            <div className="sd-code-scroll">
+                                <SyntaxHighlighter
+                                    language={langMap[activeTab]}
+                                    style={oneDark}
+                                    customStyle={{
+                                        margin: 0,
+                                        borderRadius: 0,
+                                        fontSize: "0.82rem",
+                                        background: "#1a1a1a",
+                                        minHeight: "100%",
+                                    }}
+                                    showLineNumbers
+                                >
+                                    {codeMap[activeTab] || `/* No ${activeTab} for this snippet */`}
+                                </SyntaxHighlighter>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
 
             {/* Blog Explanation */}

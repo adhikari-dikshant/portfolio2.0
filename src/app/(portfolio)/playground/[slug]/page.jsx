@@ -1,13 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { client } from "../../../../sanity/lib/client";
+import { client } from "../../../../../sanity/lib/client";
 import {
     snippetBySlugQuery,
     adjacentSnippetsQuery,
     allSnippetSlugsQuery,
-} from "../../../../sanity/lib/queries";
+} from "../../../../../sanity/lib/queries";
 import SnippetDetail from "@/components/SnippetDetail/SnippetDetail";
-import "./snippet-detail.css";
 
 export async function generateStaticParams() {
     const slugs = await client.fetch(allSnippetSlugsQuery);
@@ -33,8 +32,8 @@ export default async function SnippetPage({ params }) {
             .then((s) =>
                 s
                     ? client.fetch(adjacentSnippetsQuery, {
-                          publishedAt: s.publishedAt,
-                      })
+                        publishedAt: s.publishedAt,
+                    })
                     : null
             ),
     ]);

@@ -29,14 +29,13 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-::-webkit-scrollbar {
+body:not(:has([data-ui]))::-webkit-scrollbar {
     display: none;
 }
 
-html {
+html:not(:has([data-ui])) {
     scrollbar-width: none;
 }
-
 
 
 body {

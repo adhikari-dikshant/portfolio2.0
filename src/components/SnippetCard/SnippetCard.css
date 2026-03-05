@@ -1,169 +1,116 @@
-.snippet-card {
+.playground-item {
     background: #f2f2f2;
+    /* Lighter than base-100 to pop, or match reference grey */
+    border: none;
     border-radius: 0.5em;
+    /* More rounded as per reference */
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 320px;
+    /* Slightly shorter, more compact */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    padding: 0.5em;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-.snippet-card:hover {
+.playground-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Preview iframe */
-.snippet-card-preview {
-    height: 220px;
+.playground-item-preview {
+    border-radius: 0.5em;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #e5e5e5;
-    border-radius: 0.4em 0.4em 0 0;
-    overflow: hidden;
+    /* Placeholder bg for preview area */
     position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.snippet-iframe {
+.playground-item-preview iframe.playground-item-iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
 }
 
-/* Info row */
-.snippet-card-info {
-    padding: 0.85rem 1rem 0.75rem;
+.playground-item-info {
+    padding: 1rem 0;
+    background: #f2f2f2;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    justify-content: center;
+}
+
+/* Hover effect on info panel removed/simplified */
+.playground-item:hover .playground-item-info {
     background: #f2f2f2;
 }
 
-.snippet-card-meta {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.75rem;
-}
-
-.snippet-card-title {
+.playground-item-info h3 {
     font-family: "PP Neue Montreal", sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    /* Smaller, cleaner */
     font-weight: 500;
     color: #1a1a1a;
-    margin: 0 0 0.15rem;
+    margin: 0 0 0.25rem 0;
     letter-spacing: -0.01em;
 }
 
-.snippet-card-desc {
+.playground-item-tag {
     font-family: "PP Neue Montreal", sans-serif;
     font-size: 0.75rem;
     color: #666;
-    line-height: 1.4;
-    margin: 0;
+    text-transform: none;
+    font-weight: 400;
 }
 
-/* Card footer: tags + read link */
-.snippet-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.snippet-read-link {
-    font-family: "PP Neue Montreal", sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--base-500);
-    text-decoration: none;
-    white-space: nowrap;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-}
-
-.snippet-read-link:hover {
-    border-bottom-color: var(--base-500);
-}
-
-/* Tags */
-.snippet-tags {
+/* Tag pills (e.g. in SnippetCard) */
+.playground-item-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
+    margin-top: 0.15rem;
 }
 
-.snippet-tag {
-    font-family: "PP Neue Montreal", sans-serif;
+.playground-item-tag.pill {
+    display: inline-block;
     font-size: 0.68rem;
     font-weight: 500;
-    color: var(--base-500);
-    background: rgba(255, 110, 20, 0.1);
-    border: 1px solid rgba(255, 110, 20, 0.2);
-    padding: 0.15rem 0.5rem;
+    letter-spacing: 0.02em;
+    color: var(--base-400, #1a1a1a);
+    background: rgba(255, 110, 20, 0.08);
+    border: 1px solid rgba(255, 110, 20, 0.18);
+    padding: 0.22rem 0.6rem;
     border-radius: 100px;
     white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-/* View Code toggle button */
-.snippet-code-toggle {
-    font-family: "PP Neue Montreal", sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: #1a1a1a;
-    background: rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 100px;
-    padding: 0.3rem 0.75rem;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s, border-color 0.2s;
-    flex-shrink: 0;
+.playground-item-link:hover .playground-item-tag.pill {
+    background: rgba(255, 110, 20, 0.12);
+    border-color: rgba(255, 110, 20, 0.28);
+    color: var(--base-400, #1a1a1a);
 }
 
-.snippet-code-toggle:hover,
-.snippet-code-toggle.active {
-    background: #1a1a1a;
-    color: #f2f2f2;
-    border-color: #1a1a1a;
+.playground-item-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Code panel */
-.snippet-code-panel {
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    background: #1a1a1a;
+.playground-item.span-2 {
+    grid-column: span 2;
 }
 
-.snippet-code-tabs {
-    display: flex;
-    gap: 0;
-    background: #111;
-    padding: 0 0.75rem;
-}
-
-.snippet-tab {
-    font-family: "PP Neue Montreal", sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: #888;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    padding: 0.55rem 0.75rem;
-    cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
-}
-
-.snippet-tab.active {
-    color: var(--base-500);
-    border-bottom-color: var(--base-500);
-}
-
-.snippet-code-body {
-    overflow: hidden;
-}
-
-.snippet-code-body pre {
-    overflow-x: auto;
+@media (max-width: 768px) {
+    .playground-item.span-2 {
+        grid-column: span 1;
+    }
 }

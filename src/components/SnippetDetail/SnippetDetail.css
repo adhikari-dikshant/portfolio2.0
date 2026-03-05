@@ -1,30 +1,98 @@
+/* ── Wrapper ──────────────────────────────────────────────────────────── */
 .sd-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3.5rem;
 }
 
+/* ── Section labels ──────────────────────────────────────────────────── */
 .sd-block-label {
     font-family: "PP Neue Montreal", sans-serif;
-    font-size: 0.72rem;
+    font-size: 1.25rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--base-400);
-    opacity: 0.55;
-    margin-bottom: 0.75rem;
+    color: var(--base-300);
+    margin-bottom: 1rem;
 }
 
-/* Live Preview */
+/* ── View header (label + toggle pills) ──────────────────────────────── */
+.sd-view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.sd-view-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 0.2rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.sd-view-pill {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--base-300);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.sd-view-pill:hover:not(.active) {
+    color: var(--base-400);
+}
+
+.sd-view-pill.active {
+    background: var(--base-400);
+    color: var(--base-100);
+    box-shadow: 0 2px 8px rgba(26, 22, 20, 0.18);
+}
+
+/* ── Live Preview ────────────────────────────────────────────────────── */
 .sd-preview-block {
     width: 100%;
 }
 
 .sd-preview {
-    background: #e5e5e5;
-    border-radius: 0.5rem;
+    background: #f2f2f2;
+    border-radius: 0.85rem;
     overflow: hidden;
-    height: 380px;
+    height: 440px;
+    padding: 0.5rem;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.03),
+        0 4px 16px rgba(0, 0, 0, 0.05),
+        0 12px 36px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sd-preview:hover {
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.03),
+        0 8px 24px rgba(0, 0, 0, 0.07),
+        0 20px 48px rgba(0, 0, 0, 0.05);
+}
+
+.sd-preview-inner {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    background: #e5e5e5;
+    border-radius: 0.6rem;
+    overflow: hidden;
 }
 
 .sd-iframe {
@@ -34,17 +102,29 @@
     display: block;
 }
 
-/* Code section */
-.sd-code-section {
+/* ── Code card (inside the same preview surface) ─────────────────────── */
+.sd-code-card {
     width: 100%;
+    flex: 1;
+    min-height: 0;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.sd-tabs-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0a0a0e;
+    padding: 0 0.85rem;
+    flex-shrink: 0;
 }
 
 .sd-tabs {
     display: flex;
     gap: 0;
-    background: #111;
-    border-radius: 0.5rem 0.5rem 0 0;
-    padding: 0 0.75rem;
 }
 
 .sd-tab {
@@ -52,13 +132,17 @@
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.05em;
-    color: #888;
+    color: #555;
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
-    padding: 0.6rem 0.75rem;
+    padding: 0.7rem 0.85rem;
     cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.sd-tab:hover {
+    color: #999;
 }
 
 .sd-tab.active {
@@ -66,66 +150,108 @@
     border-bottom-color: var(--base-500);
 }
 
-/* Article body */
-.sd-divider {
-    height: 1px;
-    background: rgba(0, 0, 0, 0.07);
-    margin-bottom: 2.5rem;
+/* Copy button */
+.sd-copy-btn {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #bbb;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
+.sd-copy-btn:hover {
+    color: #e5e5e5;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.sd-copy-btn.copied {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.25);
+    background: rgba(74, 222, 128, 0.08);
+}
+
+/* Scrollable code area */
+.sd-code-scroll {
+    flex: 1;
+    overflow: auto;
+    min-height: 0;
+}
+
+/* ── Article body ────────────────────────────────────────────────────── */
 .sd-article {
     max-width: 720px;
+}
+
+.sd-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.02) 80%, transparent);
+    margin-bottom: 2.75rem;
 }
 
 .sd-p {
     font-family: "PP Neue Montreal", sans-serif;
     font-size: 1rem;
-    line-height: 1.75;
-    color: var(--base-500);
-    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    color: var(--base-400);
+    margin-bottom: 1.5rem;
 }
 
 .sd-h2 {
     font-family: "Big Shoulders Display", sans-serif;
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 900;
     text-transform: uppercase;
     color: var(--base-500);
-    margin: 2.25rem 0 0.75rem;
-    line-height: 1.1;
+    margin: 2.75rem 0 0.85rem;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
 }
 
 .sd-h3 {
     font-family: "PP Neue Montreal", sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--base-500);
-    margin: 1.75rem 0 0.5rem;
+    color: var(--base-400);
+    margin: 2.25rem 0 0.65rem;
+    letter-spacing: -0.01em;
 }
 
 .sd-h4 {
     font-family: "PP Neue Montreal", sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--base-500);
-    margin: 1.5rem 0 0.4rem;
+    color: var(--base-400);
+    margin: 1.75rem 0 0.45rem;
 }
 
 .sd-blockquote {
     border-left: 3px solid var(--base-500);
-    padding: 0.5rem 0 0.5rem 1.25rem;
-    margin: 1.5rem 0;
+    padding: 0.85rem 0 0.85rem 1.5rem;
+    margin: 2rem 0;
     color: var(--base-400);
     font-family: "PP Neue Montreal", sans-serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
-    line-height: 1.65;
+    line-height: 1.75;
+    opacity: 0.8;
+    background: rgba(255, 110, 20, 0.02);
+    border-radius: 0 0.4rem 0.4rem 0;
 }
 
 .sd-link {
     color: var(--base-500);
     text-underline-offset: 3px;
-    text-decoration-color: rgba(0, 0, 0, 0.3);
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: rgba(255, 110, 20, 0.25);
     transition: text-decoration-color 0.2s;
 }
 
@@ -135,54 +261,233 @@
 
 .sd-inline-code {
     font-family: "Fira Code", "Fira Mono", monospace;
-    font-size: 0.85em;
-    background: rgba(0, 0, 0, 0.07);
+    font-size: 0.84em;
+    background: rgba(0, 0, 0, 0.055);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     border-radius: 4px;
-    padding: 0.1em 0.4em;
-    color: var(--base-500);
+    padding: 0.12em 0.4em;
+    color: var(--base-400);
 }
 
-/* In-body code block */
+/* ── In-body code block ──────────────────────────────────────────────── */
 .sd-code-block {
-    margin: 1.5rem 0;
-    border-radius: 0.5rem;
+    margin: 2rem 0;
+    border-radius: 0.65rem;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 .sd-code-caption {
     font-family: "PP Neue Montreal", sans-serif;
     font-size: 0.72rem;
     font-weight: 500;
-    color: #aaa;
-    background: #111;
-    padding: 0.45rem 1rem;
-    border-radius: 0.5rem 0.5rem 0 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: #888;
+    background: #0a0a0e;
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    letter-spacing: 0.02em;
 }
 
-/* In-body images */
+/* ── In-body images ──────────────────────────────────────────────────── */
 .sd-figure {
-    margin: 1.75rem 0;
+    margin: 2.25rem 0;
 }
 
 .sd-image {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: 0.65rem;
     display: block;
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 .sd-figcaption {
     font-family: "PP Neue Montreal", sans-serif;
-    font-size: 0.78rem;
-    color: var(--base-400);
-    opacity: 0.6;
-    margin-top: 0.5rem;
+    font-size: 0.76rem;
+    color: var(--base-300);
+    margin-top: 0.65rem;
     text-align: center;
+    font-style: italic;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   Page-level styles (snippet detail page layout, header, nav)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.snippet-detail-page {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: var(--base-100);
+}
+
+.snippet-detail-container {
+    max-width: 860px;
+    padding-bottom: 6rem;
+}
+
+/* ── Back link ───────────────────────────────────────────────────────── */
+.snippet-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--base-300);
+    text-decoration: none;
+    margin-bottom: 3rem;
+    padding: 0.35rem 0;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.snippet-back:hover {
+    color: var(--base-500);
+    gap: 0.5rem;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────── */
+.snippet-detail-header {
+    margin-bottom: 3.5rem;
+}
+
+.snippet-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.35rem;
+}
+
+.snippet-detail-tag {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--base-400);
+    background: rgba(255, 110, 20, 0.08);
+    border: 1px solid rgba(255, 110, 20, 0.18);
+    padding: 0.22rem 1rem;
+    border-radius: 100px;
+    line-height: 1;
+}
+
+.snippet-detail-title {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+    color: var(--base-500);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.snippet-detail-desc {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 1.25rem;
+    color: var(--base-400);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    max-width: 620px;
+    opacity: 0.8;
+}
+
+.snippet-detail-date {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--base-300);
+    letter-spacing: 0.02em;
+}
+
+/* ── Prev / Next navigation ──────────────────────────────────────────── */
+.snippet-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.snippet-nav-item {
+    flex: 1;
+}
+
+.snippet-nav-item--right {
+    text-align: right;
+}
+
+.snippet-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-decoration: none;
+    padding: 0.85rem 1.1rem;
+    border-radius: 0.65rem;
+    border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.snippet-nav-link:hover {
+    background: rgba(0, 0, 0, 0.025);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.snippet-nav-label {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--base-300);
+}
+
+.snippet-nav-title {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--base-500);
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.snippet-nav-link:hover .snippet-nav-title {
+    border-bottom-color: var(--base-500);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
+    .snippet-detail-page {
+        padding-top: 100px;
+    }
+
+    .snippet-detail-header {
+        margin-bottom: 2.5rem;
+    }
+
     .sd-preview {
-        height: 260px;
+        height: 300px;
+    }
+
+    .sd-view-toggle {
+        padding: 0.15rem;
+    }
+
+    .sd-view-pill {
+        padding: 0.25rem 0.65rem;
+        font-size: 0.65rem;
+    }
+
+    .snippet-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .snippet-nav-item--right {
+        text-align: left;
     }
 }

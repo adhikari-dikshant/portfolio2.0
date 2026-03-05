@@ -1,10 +1,9 @@
 import React from "react";
 import "./playground.css";
-import PlaygroundItem from "@/components/PlaygroundItem/PlaygroundItem";
-import MagneticButton from "@/components/Sketches/MagneticButton";
 import SnippetCard from "@/components/SnippetCard/SnippetCard";
-import { client } from "../../../sanity/lib/client";
-import { allSnippetsQuery } from "../../../sanity/lib/queries";
+
+import { client } from "../../../../sanity/lib/client";
+import { allSnippetsQuery } from "../../../../sanity/lib/queries";
 
 async function getSnippets() {
     try {
@@ -27,14 +26,6 @@ const Playground = async () => {
                 </div>
 
                 <div className="playground-grid">
-                    {/* Static pre-built experiments */}
-                    <PlaygroundItem
-                        title="Magnetic Button"
-                        tag="Interaction / GSAP"
-                    >
-                        <MagneticButton />
-                    </PlaygroundItem>
-
                     {/* Dynamic snippets from Sanity */}
                     {snippets.map((snippet) => (
                         <SnippetCard key={snippet._id} snippet={snippet} />

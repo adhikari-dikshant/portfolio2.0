@@ -1,0 +1,161 @@
+.snippet-detail-page {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: var(--base-100);
+}
+
+.snippet-detail-container {
+    max-width: 860px;
+    padding-bottom: 6rem;
+}
+
+/* ── Back link ───────────────────────────────────────────────────────── */
+.snippet-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--base-300);
+    text-decoration: none;
+    margin-bottom: 3rem;
+    padding: 0.35rem 0;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.snippet-back:hover {
+    color: var(--base-500);
+    gap: 0.5rem;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────── */
+.snippet-detail-header {
+    margin-bottom: 3.5rem;
+}
+
+.snippet-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.35rem;
+}
+
+.snippet-detail-tag {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--base-400);
+    background: rgba(255, 110, 20, 0.08);
+    border: 1px solid rgba(255, 110, 20, 0.18);
+    padding: 0.22rem 1rem;
+    border-radius: 100px;
+    line-height: 1;
+}
+
+.snippet-detail-title {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+    color: var(--base-500);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.snippet-detail-desc {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 1.25rem;
+    color: var(--base-400);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    max-width: 620px;
+    opacity: 0.8;
+}
+
+.snippet-detail-date {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--base-300);
+    letter-spacing: 0.02em;
+}
+
+/* ── Prev / Next navigation ──────────────────────────────────────────── */
+.snippet-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.snippet-nav-item {
+    flex: 1;
+}
+
+.snippet-nav-item--right {
+    text-align: right;
+}
+
+.snippet-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-decoration: none;
+    padding: 0.85rem 1.1rem;
+    border-radius: 0.65rem;
+    border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.snippet-nav-link:hover {
+    background: rgba(0, 0, 0, 0.025);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.snippet-nav-label {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--base-300);
+}
+
+.snippet-nav-title {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--base-500);
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.snippet-nav-link:hover .snippet-nav-title {
+    border-bottom-color: var(--base-500);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .snippet-detail-page {
+        padding-top: 100px;
+    }
+
+    .snippet-detail-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .snippet-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .snippet-nav-item--right {
+        text-align: left;
+    }
+}
