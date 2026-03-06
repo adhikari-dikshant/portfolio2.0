@@ -236,6 +236,7 @@ li {
     font-weight: 600;
     color: var(--base-400);
     margin: 1.75rem 0 0.45rem;
+    letter-spacing: normal;
 }
 
 .sd-blockquote {
