@@ -428,8 +428,139 @@ body:has(.newtab-extension) {
     text-decoration: none;
 }
 
-.newtab-extension .footer a:hover {
+.newtab-extension .footer a:hover,
+.newtab-extension .privacy-trigger:hover {
     text-decoration: underline;
+}
+
+.newtab-extension .privacy-trigger {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.newtab-extension .privacy-modal-root {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #25382d73;
+    backdrop-filter: blur(4px);
+}
+
+.newtab-extension .privacy-modal {
+    width: min(640px, 100%);
+    max-height: min(82vh, 760px);
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 24px 60px #25382d24;
+    overflow: hidden;
+}
+
+.newtab-extension .privacy-modal-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 28px 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.newtab-extension .privacy-modal-header .eyebrow {
+    margin-bottom: 10px;
+}
+
+.newtab-extension .privacy-modal-header h2 {
+    font-size: 28px;
+    letter-spacing: -0.04em;
+}
+
+.newtab-extension .privacy-modal-close {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    border-radius: 9px;
+    min-height: 36px;
+    padding: 0 14px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: none;
+}
+
+.newtab-extension .privacy-modal-close:hover {
+    background: #edf0e8;
+}
+
+.newtab-extension .privacy-modal-body {
+    padding: 8px 28px 28px;
+    overflow: auto;
+}
+
+.newtab-extension .privacy-modal-body h3 {
+    margin: 22px 0 8px;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+}
+
+.newtab-extension .privacy-modal-body p,
+.newtab-extension .privacy-modal-body li {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--muted);
+}
+
+.newtab-extension .privacy-modal-body p + p {
+    margin-top: 10px;
+}
+
+.newtab-extension .privacy-modal-body ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.newtab-extension .privacy-modal-body li + li {
+    margin-top: 8px;
+}
+
+.newtab-extension .privacy-modal-body a {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 460px) {
+    .newtab-extension .privacy-modal-root {
+        padding: 12px;
+        align-items: end;
+    }
+
+    .newtab-extension .privacy-modal {
+        max-height: 88vh;
+        border-radius: 18px 18px 12px 12px;
+    }
+
+    .newtab-extension .privacy-modal-header,
+    .newtab-extension .privacy-modal-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .newtab-extension .privacy-modal-header h2 {
+        font-size: 24px;
+    }
 }
 
 /* Bento composition */

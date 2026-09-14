@@ -1,8 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 export default function NewtabExtensionPage() {
+    const [privacyOpen, setPrivacyOpen] = useState(false);
+    const privacyTitleId = useId();
+    const privacyCloseRef = useRef(null);
+    const privacyTriggerRef = useRef(null);
+
     useEffect(() => {
         const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
         if (motion.matches || !("IntersectionObserver" in window)) return;
@@ -52,6 +57,26 @@ export default function NewtabExtensionPage() {
             motion.removeEventListener("change", onMotionChange);
         };
     }, []);
+
+    useEffect(() => {
+        if (!privacyOpen) return;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        privacyCloseRef.current?.focus();
+
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") setPrivacyOpen(false);
+        };
+
+        window.addEventListener("keydown", onKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener("keydown", onKeyDown);
+            privacyTriggerRef.current?.focus();
+        };
+    }, [privacyOpen]);
 
     return (
         <>
@@ -310,7 +335,7 @@ export default function NewtabExtensionPage() {
                                     Your dashboard data is stored in your browser.
                                 </p>
                             </details>
-                            <details id="privacy">
+                            <details>
                                 <summary>What stays local, and what goes online?</summary>
                                 <p>
                                     Settings, tasks, notes, saved workspaces, and screen-time
@@ -378,9 +403,21 @@ export default function NewtabExtensionPage() {
                 </main>
 
                 <footer className="footer">
-                    <span>Daily Workspace · <a href="https://dikshant.xyz/" target="blank">By Dikshant Singh Adhikari</a></span>
+                    <span>
+                        Daily Workspace ·{" "}
+                        <a href="https://dikshant.xyz/" target="_blank" rel="noopener noreferrer">
+                            By Dikshant Singh Adhikari
+                        </a>
+                    </span>
                     <div>
-                        <a href="#privacy">Privacy details</a>
+                        <button
+                            type="button"
+                            className="privacy-trigger"
+                            ref={privacyTriggerRef}
+                            onClick={() => setPrivacyOpen(true)}
+                        >
+                            Privacy policy
+                        </button>
                         <a
                             href="https://github.com/adhikari-dikshant/tab-extension/issues"
                             target="_blank"
@@ -398,6 +435,104 @@ export default function NewtabExtensionPage() {
                     </div>
                 </footer>
             </div>
+
+            {privacyOpen ? (
+                <div
+                    className="privacy-modal-root"
+                    role="presentation"
+                    onMouseDown={(event) => {
+                        if (event.target === event.currentTarget) setPrivacyOpen(false);
+                    }}
+                >
+                    <div
+                        className="privacy-modal"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby={privacyTitleId}
+                    >
+                        <div className="privacy-modal-header">
+                            <div>
+                                <p className="eyebrow">Privacy</p>
+                                <h2 id={privacyTitleId}>Privacy policy</h2>
+                            </div>
+                            <button
+                                type="button"
+                                className="privacy-modal-close"
+                                ref={privacyCloseRef}
+                                onClick={() => setPrivacyOpen(false)}
+                                aria-label="Close privacy policy"
+                            >
+                                Close
+                            </button>
+                        </div>
+
+                        <div className="privacy-modal-body">
+                            <p>
+                                Daily Workspace is built to keep your day private. The extension
+                                runs on your device, does not require an account, and does not
+                                operate its own backend for your dashboard data.
+                            </p>
+
+                            <h3>What stays on your device</h3>
+                            <p>
+                                Settings, shortcuts, tasks, notes, saved workspaces, appearance
+                                preferences, and screen-time records are stored locally in your
+                                browser. You can export a backup from Customize → Data, and
+                                importing a backup replaces your current saved setup.
+                            </p>
+
+                            <h3>What may go online</h3>
+                            <p>
+                                Some optional features contact third-party services directly from
+                                your browser when you use them:
+                            </p>
+                            <ul>
+                                <li>
+                                    Weather may send location coordinates to weather and
+                                    place-name services.
+                                </li>
+                                <li>
+                                    Search suggestions may send typed queries to your chosen
+                                    suggestion provider.
+                                </li>
+                                <li>
+                                    Site icons may be fetched from the browser favicon API or an
+                                    external icon service when a local icon is unavailable.
+                                </li>
+                            </ul>
+
+                            <h3>Permissions</h3>
+                            <p>
+                                Required permissions cover local storage, alarms, and favicons.
+                                Optional permissions such as bookmarks, tabs, sessions, idle,
+                                notifications, and top sites are requested only when you enable
+                                the matching feature, and can be revoked in your browser’s
+                                extension settings.
+                            </p>
+
+                            <h3>Analytics and accounts</h3>
+                            <p>
+                                Daily Workspace does not include analytics, advertising trackers,
+                                or an account system. We do not collect usage telemetry through
+                                the extension.
+                            </p>
+
+                            <h3>Contact</h3>
+                            <p>
+                                Questions about this policy can be opened as a GitHub issue on the{" "}
+                                <a
+                                    href="https://github.com/adhikari-dikshant/tab-extension/issues"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Daily Workspace repository
+                                </a>
+                                .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            ) : null}
         </>
     );
 }
