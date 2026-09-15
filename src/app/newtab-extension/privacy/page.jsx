@@ -98,7 +98,7 @@ export default function PrivacyPage() {
                 alt=""
                 aria-hidden="true"
               />
-              Add to Chrome
+              <span className="nav-install-label">Add to Chrome</span>
             </a>
           </nav>
         </header>

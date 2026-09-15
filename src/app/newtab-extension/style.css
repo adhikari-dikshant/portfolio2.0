@@ -112,13 +112,14 @@ body:has(.newtab-extension) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 18px;
+    gap: 12px;
     margin-top: 22px;
     padding: 12px 12px 12px 14px;
     border: 1px solid #dbe3c2;
     border-radius: 24px;
     background: var(--soft);
     box-shadow: 0 10px 28px #263c2a08;
+    flex-wrap: nowrap;
 }
 
 .newtab-extension .brand {
@@ -127,6 +128,7 @@ body:has(.newtab-extension) {
     gap: 12px;
     text-decoration: none;
     min-width: 0;
+    flex: 1 1 auto;
 }
 
 .newtab-extension .brand-mark {
@@ -160,6 +162,9 @@ body:has(.newtab-extension) {
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .newtab-extension .brand-tag {
@@ -175,8 +180,9 @@ body:has(.newtab-extension) {
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
+    flex: 0 0 auto;
 }
 
 .newtab-extension .nav a {
@@ -1654,31 +1660,79 @@ body:has(.newtab-extension) {
     }
 }
 
+@media (max-width: 1100px) {
+    .newtab-extension .nav-link {
+        display: none;
+    }
+
+    .newtab-extension .nav .nav-source,
+    .newtab-extension .nav-coffee,
+    .newtab-extension .nav-install {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .newtab-extension .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+    }
+
+    .newtab-extension .brand-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .newtab-extension .header {
+        margin-top: 14px;
+        padding: 8px 8px 8px 10px;
+        border-radius: 18px;
+        gap: 10px;
+    }
+
+    .newtab-extension .nav-link,
+    .newtab-extension .nav .nav-source,
+    .newtab-extension .nav-coffee {
+        display: none !important;
+    }
+
+    .newtab-extension .brand-tag {
+        display: none;
+    }
+
+    .newtab-extension .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .newtab-extension .brand svg,
+    .newtab-extension .brand-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .newtab-extension .brand-name {
+        font-size: 13px;
+    }
+
+    .newtab-extension .nav-install {
+        padding: 9px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 760px) {
     .newtab-extension .dw-container {
         width: calc(100% - 32px);
     }
 
     .newtab-extension .header {
-        margin-top: 14px;
-        padding: 10px;
-        border-radius: 20px;
-        gap: 12px;
-    }
-
-    .newtab-extension .nav {
-        gap: 0;
-    }
-
-    .newtab-extension .nav-link,
-    .newtab-extension .nav-source,
-    .newtab-extension .nav-coffee {
-        display: none;
-    }
-
-    .newtab-extension .nav-install {
-        padding: 9px 12px;
-        font-size: 12px;
+        margin-top: 12px;
+        padding: 8px 8px 8px 10px;
+        border-radius: 18px;
+        gap: 10px;
     }
 
     .newtab-extension .hero-bento {
@@ -1880,38 +1934,35 @@ body:has(.newtab-extension) {
 
 @media (max-width: 460px) {
     .newtab-extension .brand-mark {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
+        width: 36px;
+        height: 36px;
+        border-radius: 11px;
     }
 
     .newtab-extension .brand svg,
     .newtab-extension .brand-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     .newtab-extension .brand-name {
-        font-size: 13px;
-    }
-
-    .newtab-extension .nav {
         font-size: 12px;
     }
 
+    .newtab-extension .nav-install-label {
+        display: none;
+    }
+
     .newtab-extension .nav-install {
-        padding: 8px 11px;
-        font-size: 11px;
-        gap: 7px;
+        padding: 8px;
+        min-width: 36px;
+        min-height: 36px;
+        justify-content: center;
     }
 
     .newtab-extension .nav-install-icon {
-        width: 14px;
-        height: 14px;
-    }
-
-    .newtab-extension .brand-tag {
-        display: none;
+        width: 16px;
+        height: 16px;
     }
 
     .newtab-extension .hero {
