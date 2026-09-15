@@ -1691,10 +1691,38 @@ body:has(.newtab-extension) {
         gap: 10px;
     }
 
-    .newtab-extension .nav-link,
-    .newtab-extension .nav .nav-source,
-    .newtab-extension .nav-coffee {
+    .newtab-extension .nav-link {
         display: none !important;
+    }
+
+    .newtab-extension .nav {
+        gap: 6px;
+    }
+
+    .newtab-extension .nav .nav-source,
+    .newtab-extension .nav-coffee,
+    .newtab-extension .nav-install {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        min-height: 38px;
+        padding: 0;
+        border-radius: 12px;
+        gap: 0;
+    }
+
+    .newtab-extension .nav-btn-label {
+        display: none;
+    }
+
+    .newtab-extension .nav-source-icon,
+    .newtab-extension .nav-install-icon,
+    .newtab-extension .nav-coffee svg {
+        width: 16px;
+        height: 16px;
     }
 
     .newtab-extension .brand-tag {
@@ -1714,12 +1742,6 @@ body:has(.newtab-extension) {
 
     .newtab-extension .brand-name {
         font-size: 13px;
-    }
-
-    .newtab-extension .nav-install {
-        padding: 9px 12px;
-        font-size: 12px;
-        white-space: nowrap;
     }
 }
 
@@ -1949,20 +1971,21 @@ body:has(.newtab-extension) {
         font-size: 12px;
     }
 
-    .newtab-extension .nav-install-label {
-        display: none;
-    }
-
+    .newtab-extension .nav .nav-source,
+    .newtab-extension .nav-coffee,
     .newtab-extension .nav-install {
-        padding: 8px;
+        width: 36px;
+        height: 36px;
         min-width: 36px;
         min-height: 36px;
-        justify-content: center;
+        border-radius: 11px;
     }
 
-    .newtab-extension .nav-install-icon {
-        width: 16px;
-        height: 16px;
+    .newtab-extension .nav-source-icon,
+    .newtab-extension .nav-install-icon,
+    .newtab-extension .nav-coffee svg {
+        width: 15px;
+        height: 15px;
     }
 
     .newtab-extension .hero {

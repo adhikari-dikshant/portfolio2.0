@@ -139,6 +139,7 @@ export default function NewtabExtensionPage() {
               href="https://github.com/adhikari-dikshant/tab-extension"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <img
                 className="nav-source-icon"
@@ -148,22 +149,24 @@ export default function NewtabExtensionPage() {
                 alt=""
                 aria-hidden="true"
               />
-              GitHub
+              <span className="nav-btn-label">GitHub</span>
             </a>
             <a
               className="nav-coffee"
               href={BUY_ME_A_COFFEE_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Buy me a coffee"
             >
               <CoffeeGlyph />
-              Coffee
+              <span className="nav-btn-label">Coffee</span>
             </a>
             <a
               className="nav-install"
               href={CHROME_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Add to Chrome"
             >
               <img
                 className="nav-install-icon"
@@ -173,7 +176,7 @@ export default function NewtabExtensionPage() {
                 alt=""
                 aria-hidden="true"
               />
-              <span className="nav-install-label">Add to Chrome</span>
+              <span className="nav-btn-label">Add to Chrome</span>
             </a>
           </nav>
         </header>

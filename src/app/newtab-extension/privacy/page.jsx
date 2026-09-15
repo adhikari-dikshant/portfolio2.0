@@ -44,6 +44,7 @@ export default function PrivacyPage() {
               href="https://github.com/adhikari-dikshant/tab-extension"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <img
                 className="nav-source-icon"
@@ -53,13 +54,14 @@ export default function PrivacyPage() {
                 alt=""
                 aria-hidden="true"
               />
-              GitHub
+              <span className="nav-btn-label">GitHub</span>
             </a>
             <a
               className="nav-coffee"
               href="https://buymeacoffee.com/ikshwaku"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Buy me a coffee"
             >
               <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
                 <path
@@ -82,13 +84,14 @@ export default function PrivacyPage() {
                   strokeLinecap="round"
                 />
               </svg>
-              Coffee
+              <span className="nav-btn-label">Coffee</span>
             </a>
             <a
               className="nav-install"
               href="https://chromewebstore.google.com/detail/pebbieohhhbdklnkgeicihnbffdglhhh"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Add to Chrome"
             >
               <img
                 className="nav-install-icon"
@@ -98,7 +101,7 @@ export default function PrivacyPage() {
                 alt=""
                 aria-hidden="true"
               />
-              <span className="nav-install-label">Add to Chrome</span>
+              <span className="nav-btn-label">Add to Chrome</span>
             </a>
           </nav>
         </header>
