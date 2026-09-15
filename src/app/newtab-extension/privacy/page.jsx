@@ -17,25 +17,88 @@ export default function PrivacyPage() {
             href="/newtab-extension"
             aria-label="Daily Workspace home"
           >
-            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <rect width="32" height="32" rx="8" fill="#2c493b" />
-              <path
-                d="M8 8h6v6H8zm10 0h6v10h-6zM8 18h6v6H8zm10 4h6v2h-6z"
-                fill="#e6edce"
+            <span className="brand-mark">
+              <img
+                className="brand-icon"
+                src="/newtab-extension/icon-newtab.svg"
+                width={34}
+                height={34}
+                alt=""
+                aria-hidden="true"
               />
-            </svg>
-            Daily Workspace
+            </span>
+            <span className="brand-text">
+              <span className="brand-name">Daily Workspace</span>
+              <span className="brand-tag">New Tab</span>
+            </span>
           </a>
           <nav className="nav" aria-label="Main navigation">
-            <a href="/newtab-extension#features">Features</a>
-            <a href="/newtab-extension#get-started">Get started</a>
+            <a className="nav-link" href="/newtab-extension#features">
+              Features
+            </a>
+            <a className="nav-link" href="/newtab-extension#get-started">
+              Install
+            </a>
             <a
               className="nav-source"
               href="https://github.com/adhikari-dikshant/tab-extension"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub ↗
+              <img
+                className="nav-source-icon"
+                src="/newtab-extension/github.svg"
+                width={16}
+                height={16}
+                alt=""
+                aria-hidden="true"
+              />
+              GitHub
+            </a>
+            <a
+              className="nav-coffee"
+              href="https://buymeacoffee.com/ikshwaku"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path
+                  d="M5 8h11v6.5A3.5 3.5 0 0 1 12.5 18h-4A3.5 3.5 0 0 1 5 14.5V8Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                />
+                <path
+                  d="M16 9.5h1.8A2.2 2.2 0 0 1 20 11.7v.6A2.2 2.2 0 0 1 17.8 14.5H16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                />
+                <path
+                  d="M4 20h13M8 5.5c.4-.8.4-1.5 0-2.2M11 5.5c.4-.8.4-1.5 0-2.2"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
+              Coffee
+            </a>
+            <a
+              className="nav-install"
+              href="https://chromewebstore.google.com/detail/pebbieohhhbdklnkgeicihnbffdglhhh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="nav-install-icon"
+                src="/newtab-extension/chrom.svg"
+                width={16}
+                height={16}
+                alt=""
+                aria-hidden="true"
+              />
+              Add to Chrome
             </a>
           </nav>
         </header>
@@ -123,13 +186,14 @@ export default function PrivacyPage() {
 
         <footer className="footer">
           <span>
-            Daily Workspace ·{" "}
+            Daily Workspace · By{" "}
             <a
+              className="footer-author"
               href="https://dikshant.xyz/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              By Dikshant Singh Adhikari
+              Dikshant Singh Adhikari
             </a>
           </span>
           <div>

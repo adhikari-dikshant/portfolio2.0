@@ -8,10 +8,15 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-    title: "Daily Workspace — Your everyday tools, one new tab",
+    title: "Daily Workspace — Stop starting your day scattered",
     description:
-        "Daily Workspace brings tasks, notes, shortcuts, weather and focus tools together in a customizable new tab dashboard.",
+        "Replace the blank new tab with a calm dashboard for tasks, notes, shortcuts, weather, and focus. Free on Chrome and Firefox.",
     themeColor: "#f7f8f4",
+    icons: {
+        icon: "/newtab-extension/icon-newtab.svg",
+        shortcut: "/newtab-extension/icon-newtab.svg",
+        apple: "/newtab-extension/icon-newtab.svg",
+    },
 };
 
 export default function NewtabExtensionLayout({ children }) {
