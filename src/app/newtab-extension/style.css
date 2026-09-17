@@ -347,6 +347,30 @@ body:has(.newtab-extension) {
     margin-top: 28px;
 }
 
+.newtab-extension .product-hunt-badge {
+    display: inline-flex;
+    margin-top: 16px;
+    line-height: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newtab-extension .product-hunt-badge img {
+    display: block;
+    width: min(250px, 100%);
+    height: auto;
+}
+
+.newtab-extension .hero .product-hunt-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px #263c2a14;
+}
+
+.newtab-extension .install-actions .product-hunt-badge {
+    margin-top: 2px;
+}
+
 .newtab-extension .store-button {
     min-width: 168px;
     gap: 10px;
@@ -2003,9 +2027,14 @@ body:has(.newtab-extension) {
     }
 
     .newtab-extension .hero .actions,
-    .newtab-extension .hero .store-actions {
+    .newtab-extension .hero .store-actions,
+    .newtab-extension .hero .product-hunt-badge {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .newtab-extension .hero .product-hunt-badge {
+        width: fit-content;
     }
 
     .newtab-extension .hero .store-button {
