@@ -2,6 +2,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
+    metadataBase: new URL("https://dikshant.xyz"),
     title: "Dikshant Singh Adhikari | Frontend Developer & Web Designer",
     description: "I'm a frontend developer and web designer based in Udaipur, Rajasthan. I create beautiful, responsive, and user-friendly websites that help businesses and individuals achieve their goals.",
     icons: {

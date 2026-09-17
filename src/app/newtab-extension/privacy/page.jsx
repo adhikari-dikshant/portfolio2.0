@@ -2,6 +2,32 @@ export const metadata = {
   title: "Privacy policy — Daily Workspace",
   description:
     "How Daily Workspace stores data locally, when optional features contact third parties, and what permissions are used.",
+  alternates: {
+    canonical: "/newtab-extension/privacy",
+  },
+  openGraph: {
+    title: "Privacy policy — Daily Workspace",
+    description:
+      "How Daily Workspace stores data locally, when optional features contact third parties, and what permissions are used.",
+    url: "/newtab-extension/privacy",
+    siteName: "Daily Workspace",
+    type: "website",
+    images: [
+      {
+        url: "/newtab-extension/dashboard-light.png",
+        width: 1440,
+        height: 900,
+        alt: "Daily Workspace new tab dashboard",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy policy — Daily Workspace",
+    description:
+      "How Daily Workspace stores data locally, when optional features contact third parties, and what permissions are used.",
+    images: ["/newtab-extension/dashboard-light.png"],
+  },
 };
 
 export default function PrivacyPage() {
