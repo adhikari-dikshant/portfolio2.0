@@ -1,6 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
+import {
+  SiGmail,
+  SiGoogledrive,
+  SiGooglecalendar,
+  SiGooglekeep,
+} from "react-icons/si";
 
 const CHROME_STORE_URL =
   "https://chromewebstore.google.com/detail/pebbieohhhbdklnkgeicihnbffdglhhh";
@@ -384,16 +390,28 @@ export default function NewtabExtensionPage() {
                 </p>
                 <div className="shortcut-demo" aria-hidden="true">
                   <span>
-                    <i>M</i>Mail
+                    <span className="shortcut-demo-icon shortcut-gmail">
+                      <SiGmail />
+                    </span>
+                    Mail
                   </span>
                   <span>
-                    <i>D</i>Drive
+                    <span className="shortcut-demo-icon shortcut-drive">
+                      <SiGoogledrive />
+                    </span>
+                    Drive
                   </span>
                   <span>
-                    <i>C</i>Calendar
+                    <span className="shortcut-demo-icon shortcut-calendar">
+                      <SiGooglecalendar />
+                    </span>
+                    Calendar
                   </span>
                   <span>
-                    <i>N</i>Notes
+                    <span className="shortcut-demo-icon shortcut-keep">
+                      <SiGooglekeep />
+                    </span>
+                    Notes
                   </span>
                 </div>
               </article>

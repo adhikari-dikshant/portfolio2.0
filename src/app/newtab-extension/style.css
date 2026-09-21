@@ -1479,7 +1479,7 @@ body:has(.newtab-extension) {
     font-size: 12px;
 }
 
-.newtab-extension .shortcut-demo i {
+.newtab-extension .shortcut-demo-icon {
     display: grid;
     place-items: center;
     width: 33px;
@@ -1487,11 +1487,28 @@ body:has(.newtab-extension) {
     border: 1px solid #d3dbca;
     border-radius: 9px;
     background: #fff;
-    color: var(--accent);
-    font-size: 13px;
-    font-weight: 650;
-    font-style: normal;
     flex: none;
+}
+
+.newtab-extension .shortcut-demo-icon > svg {
+    width: 16px;
+    height: 16px;
+}
+
+.newtab-extension .shortcut-gmail {
+    color: #ea4335;
+}
+
+.newtab-extension .shortcut-drive {
+    color: #4285f4;
+}
+
+.newtab-extension .shortcut-calendar {
+    color: #1a73e8;
+}
+
+.newtab-extension .shortcut-keep {
+    color: #fbbc04;
 }
 
 .newtab-extension .personal {
@@ -2067,9 +2084,14 @@ body:has(.newtab-extension) {
         padding: 12px 5px;
     }
 
-    .newtab-extension .shortcut-demo i {
+    .newtab-extension .shortcut-demo-icon {
         width: 29px;
         height: 29px;
+    }
+
+    .newtab-extension .shortcut-demo-icon > svg {
+        width: 14px;
+        height: 14px;
     }
 
     .newtab-extension .faq {
