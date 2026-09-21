@@ -459,7 +459,7 @@ body:has(.newtab-extension) {
     margin: 0;
 }
 
-.newtab-extension .problem-heading > p {
+.newtab-extension .problem-heading>p {
     margin: 0;
     max-width: 340px;
 }
@@ -613,7 +613,7 @@ body:has(.newtab-extension) {
     flex: none;
 }
 
-.newtab-extension .compare-chrome > i {
+.newtab-extension .compare-chrome>i {
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -802,50 +802,60 @@ body:has(.newtab-extension) {
 }
 
 @keyframes chip-float-a {
+
     0%,
     100% {
         transform: rotate(-8deg) translateY(0);
     }
+
     50% {
         transform: rotate(-8deg) translateY(-7px);
     }
 }
 
 @keyframes chip-float-b {
+
     0%,
     100% {
         transform: rotate(7deg) translateY(0);
     }
+
     50% {
         transform: rotate(7deg) translateY(-8px);
     }
 }
 
 @keyframes chip-float-c {
+
     0%,
     100% {
         transform: rotate(4deg) translateY(0);
     }
+
     50% {
         transform: rotate(4deg) translateY(-6px);
     }
 }
 
 @keyframes chip-float-d {
+
     0%,
     100% {
         transform: rotate(-5deg) translateY(0);
     }
+
     50% {
         transform: rotate(-5deg) translateY(-9px);
     }
 }
 
 @keyframes chip-float-e {
+
     0%,
     100% {
         transform: rotate(3deg) translateY(0);
     }
+
     50% {
         transform: rotate(3deg) translateY(-5px);
     }
@@ -927,7 +937,7 @@ body:has(.newtab-extension) {
     line-height: 1.12;
 }
 
-.newtab-extension .support-copy > p {
+.newtab-extension .support-copy>p {
     max-width: 440px;
     margin-top: 14px;
     font-size: 14px;
@@ -959,7 +969,7 @@ body:has(.newtab-extension) {
     box-shadow: 0 14px 28px #6f4e372e;
 }
 
-.newtab-extension .coffee-button > span {
+.newtab-extension .coffee-button>span {
     opacity: 0.7;
 }
 
@@ -1058,7 +1068,6 @@ body:has(.newtab-extension) {
     width: 24px;
     height: 24px;
     color: var(--accent);
-    margin-bottom: 20px;
 }
 
 .newtab-extension .feature p {
@@ -1249,7 +1258,7 @@ body:has(.newtab-extension) {
     padding-left: 18px;
 }
 
-.newtab-extension .privacy-page li + li {
+.newtab-extension .privacy-page li+li {
     margin-top: 8px;
 }
 
@@ -1490,7 +1499,7 @@ body:has(.newtab-extension) {
     flex: none;
 }
 
-.newtab-extension .shortcut-demo-icon > svg {
+.newtab-extension .shortcut-demo-icon>svg {
     width: 16px;
     height: 16px;
 }
@@ -2089,7 +2098,7 @@ body:has(.newtab-extension) {
         height: 29px;
     }
 
-    .newtab-extension .shortcut-demo-icon > svg {
+    .newtab-extension .shortcut-demo-icon>svg {
         width: 14px;
         height: 14px;
     }
