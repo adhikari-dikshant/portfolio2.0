@@ -10,29 +10,50 @@ import { projects } from "@/data/projects";
 
 gsap.registerPlugin(useGSAP);
 
+const WORK_START_YEAR = 2024;
+
+const SOCIAL_LINKS = [
+    { label: "Instagram", href: "https://www.instagram.com/ikshwaku_/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/dikshant-singh-adhikari/" },
+    { label: "GitHub", href: "https://github.com/adhikari-dikshant" },
+];
+
+const workPreviews = (key) => [1, 2, 3].map((n) => `/work/work_${key}_${n}.webp`);
+
+const workList = [
+    {
+        name: "Daily Workspace",
+        href: "/newtab-extension",
+        images: workPreviews("daily_workspace"),
+    },
+    { slug: "open-blood", images: workPreviews(6) },
+    { slug: "nebbula-coworking", images: workPreviews(5) },
+    { slug: "primark-india", images: workPreviews(7) },
+    { slug: "am-circle-pvt-ltd", images: workPreviews(1) },
+    { slug: "asquarefx-studios", images: workPreviews(2) },
+    { slug: "danish-powers", images: workPreviews(3) },
+    { slug: "my-dear-tiger", images: workPreviews(4) },
+];
+
 const Page = () => {
     const { navigateWithTransition } = useViewTransition();
 
     const workPageContainer = useRef(null);
+    const heroDelay = isInitialLoad ? 1.75 : 0.75;
 
     const workItems = useMemo(
         () => {
             const variants = ["variant-1", "variant-2", "variant-3", "variant-4"];
 
-            return projects.map((project, index) => {
-                const i = index + 1;
-                const variant = variants[index % variants.length];
+            return workList.map((item, index) => {
+                const project = projects.find((p) => p.slug === item.slug);
 
                 return {
-                    index: i.toString().padStart(2, "0"),
-                    name: project.name,
-                    slug: project.slug,
-                    variant,
-                    images: [
-                        `/work/work_${i}_1.webp`,
-                        `/work/work_${i}_2.webp`,
-                        `/work/work_${i}_3.webp`,
-                    ],
+                    index: (index + 1).toString().padStart(2, "0"),
+                    name: item.name ?? project?.name,
+                    href: item.href ?? `/work/${item.slug}`,
+                    variant: variants[index % variants.length],
+                    images: item.images,
                 };
             });
         },
@@ -154,13 +175,31 @@ const Page = () => {
 
     return (
         <>
-            <section className="main-header">
-                <Copy animateOnScroll={false} delay={isInitialLoad ? 1.75 : 0.75}>
-                    <h1>
-                        Crafting Digital Worlds <br /> with a Bit of Mischief
-                    </h1>
-                </Copy>
-            </section >
+            <section className="work-hero">
+                <h1>
+                    <Copy animateOnScroll={false} delay={heroDelay}>
+                        <span className="work-hero-line">Recent —</span>
+                    </Copy>
+                    <Copy animateOnScroll={false} delay={heroDelay + 0.08}>
+                        <span className="work-hero-line">Works from</span>
+                    </Copy>
+                    <Copy animateOnScroll={false} delay={heroDelay + 0.16}>
+                        <span className="work-hero-line">
+                            ©{WORK_START_YEAR}-{new Date().getFullYear()}
+                        </span>
+                    </Copy>
+                </h1>
+
+                <div className="work-hero-links">
+                    <Copy animateOnScroll={false} delay={heroDelay + 0.3}>
+                        {SOCIAL_LINKS.map(({ label, href }) => (
+                            <a key={label} href={href} target="_blank" rel="noopener noreferrer">
+                                {label}
+                            </a>
+                        ))}
+                    </Copy>
+                </div>
+            </section>
 
             <section className="folders" ref={workPageContainer}>
                 {Array.from({ length: Math.ceil(workItems.length / 2) }).map((_, rowIndex) => (
@@ -168,10 +207,10 @@ const Page = () => {
                         {workItems.slice(rowIndex * 2, rowIndex * 2 + 2).map((item) => (
                             <a
                                 key={item.index}
-                                href={`/work/${item.slug}`}
+                                href={item.href}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    navigateWithTransition(`/work/${item.slug}`);
+                                    navigateWithTransition(item.href);
                                 }}
                             >
                                 <div className={`folder ${item.variant}`}>

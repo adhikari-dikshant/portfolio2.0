@@ -23,20 +23,20 @@ export default function Projects() {
     // The original code has some media queries in CSS, but the JS logic seems consistent
     // We will stick to the logic provided
 
-    const imageSources = [
-        "/spotlight/spotlight-11.webp",
-        "/spotlight/spotlight-9.webp",
-        "/spotlight/spotlight-13.webp",
-        "/spotlight/spotlight-16.webp",
-        "/spotlight/spotlight-1.webp",
-        "/spotlight/spotlight-4.webp",
-        "/spotlight/spotlight-5.webp",
-        "/spotlight/spotlight-8.webp",
+    const spotlight = [
+        { name: "Daily Workspace", img: "/spotlight/spotlight-daily-workspace.webp" },
+        { slug: "open-blood", img: "/spotlight/spotlight-11.webp" },
+        { slug: "nebbula-coworking", img: "/spotlight/spotlight-9.webp" },
+        { slug: "primark-india", img: "/spotlight/spotlight-13.webp" },
+        { slug: "am-circle-pvt-ltd", img: "/spotlight/spotlight-1.webp" },
+        { slug: "asquarefx-studios", img: "/spotlight/spotlight-4.webp" },
+        { slug: "danish-powers", img: "/spotlight/spotlight-5.webp" },
+        { slug: "my-dear-tiger", img: "/spotlight/spotlight-8.webp" },
     ];
 
-    const projects = imageSources.map((img, idx) => ({
+    const projects = spotlight.map(({ slug, name, img }) => ({
         img,
-        name: projectData[idx]?.name || `Project ${idx + 1}`,
+        name: name ?? projectData.find((p) => p.slug === slug)?.name,
     }));
 
     useGSAP(

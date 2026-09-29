@@ -1,14 +1,66 @@
-.main-header {
+.work-hero {
     width: 100%;
-    height: 30svh;
-    background: var(--base-100);
+    padding: 9rem 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    background-color: var(--base-100);
 }
 
-.main-header h1 {
-    font-size: 3rem;
-    line-height: 1;
-    text-align: center;
-    padding-top: 8rem;
+.work-hero h1 {
+    display: flex;
+    flex-direction: column;
+    font-size: min(9vw, 11rem);
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+}
+
+.work-hero-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.work-hero h1 > :first-child {
+    padding-left: 0.95em;
+}
+
+.work-hero-links {
+    width: 25%;
+    padding-bottom: 0.4rem;
+}
+
+.work-hero-links a {
+    display: block;
+    font-family: "PP Neue Montreal";
+    font-size: 1rem;
+    line-height: 1.3;
+    color: var(--base-400);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.work-hero-links a:hover {
+    opacity: 0.5;
+}
+
+@media (max-width: 1000px) {
+    .work-hero {
+        padding: 8rem 1.25rem 3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
+
+    .work-hero h1 {
+        font-size: 17vw;
+    }
+
+    .work-hero-links {
+        width: auto;
+        padding-bottom: 0;
+    }
 }
 
 .folders {
