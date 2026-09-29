@@ -2,21 +2,16 @@
 import "./work.css";
 import { useRef, useMemo } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useViewTransition } from "@/hooks/useViewTransition";
 import Copy from "@/components/Copy/Copy";
 import { isInitialLoad } from "@/components/Preloader/Preloader";
 import { projects } from "@/data/projects";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const WORK_START_YEAR = 2024;
-
-const SOCIAL_LINKS = [
-    { label: "Instagram", href: "https://www.instagram.com/ikshwaku_/" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/dikshant-singh-adhikari/" },
-    { label: "GitHub", href: "https://github.com/adhikari-dikshant" },
-];
 
 const workPreviews = (key) => [1, 2, 3].map((n) => `/work/work_${key}_${n}.webp`);
 
@@ -91,6 +86,7 @@ const Page = () => {
                         y: 0,
                         duration: 0.25,
                         ease: "back.out(1.7)",
+                        overwrite: "auto",
                     });
 
                     previewImages.forEach((img, imgIndex) => {
@@ -124,6 +120,7 @@ const Page = () => {
                         y: 25,
                         duration: 0.25,
                         ease: "back.out(1.7)",
+                        overwrite: "auto",
                     });
 
                     previewImages.forEach((img, imgIndex) => {
@@ -157,8 +154,41 @@ const Page = () => {
                 }
             };
 
+            const revealFolders = () => {
+                q(".row").forEach((row, rowIndex) => {
+                    const rowFolders = row.querySelectorAll(".folder");
+                    const rowWrappers = row.querySelectorAll(".folder-wrapper");
+                    const startsInView =
+                        row.getBoundingClientRect().top < window.innerHeight * 0.9;
+
+                    gsap.fromTo(
+                        rowWrappers,
+                        { y: "110%" },
+                        {
+                            y: isMobile ? 0 : 25,
+                            duration: 1,
+                            ease: "power4.out",
+                            stagger: 0.1,
+                            delay: startsInView ? heroDelay + 0.25 + rowIndex * 0.1 : 0,
+                            scrollTrigger: {
+                                trigger: row,
+                                start: "top 90%",
+                                once: true,
+                            },
+                            onComplete: () => {
+                                rowFolders.forEach((folder) =>
+                                    folder.classList.add("is-revealed")
+                                );
+                            },
+                        }
+                    );
+                });
+            };
+
             window.addEventListener("resize", handleResize);
             setInitialPositions();
+            revealFolders();
+            ScrollTrigger.refresh();
 
             return () => {
                 window.removeEventListener("resize", handleResize);
@@ -189,16 +219,6 @@ const Page = () => {
                         </span>
                     </Copy>
                 </h1>
-
-                <div className="work-hero-links">
-                    <Copy animateOnScroll={false} delay={heroDelay + 0.3}>
-                        {SOCIAL_LINKS.map(({ label, href }) => (
-                            <a key={label} href={href} target="_blank" rel="noopener noreferrer">
-                                {label}
-                            </a>
-                        ))}
-                    </Copy>
-                </div>
             </section>
 
             <section className="folders" ref={workPageContainer}>
