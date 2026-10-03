@@ -27,21 +27,35 @@ function BrandMark() {
   );
 }
 
-function ProductHuntBadge({ className = "" }) {
+function LaunchBadges({ className = "" }) {
   return (
-    <a
-      className={`product-hunt-badge ${className}`.trim()}
-      href="https://www.producthunt.com/products/daily-workspace-new-tab-dashboard?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-daily-workspace-new-tab-dashboard"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        alt="Daily Workspace — New Tab Dashboard - Your tasks, notes, and favorite sites. One useful new tab. | Product Hunt"
-        width={250}
-        height={54}
-        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1253031&theme=light&t=1789625506596"
-      />
-    </a>
+    <div className={`launch-badges ${className}`.trim()}>
+      <a
+        className="launch-badge"
+        href="https://www.producthunt.com/products/daily-workspace-new-tab-dashboard?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-daily-workspace-new-tab-dashboard"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          alt="Daily Workspace — New Tab Dashboard - Your tasks, notes, and favorite sites. One useful new tab. | Product Hunt"
+          width={250}
+          height={54}
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1253031&theme=light&t=1789625506596"
+        />
+      </a>
+      <a
+        className="launch-badge"
+        href="https://peerlist.io/ikshwaku/project/daily-workspace--new-tab-dashboard"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          alt="Daily Workspace — New Tab Dashboard | Peerlist"
+          height={54}
+          src="https://peerlist.io/api/v1/projects/embed/PRJHQ7MDKJRLJMBG616GA988P6PO9Q?showUpvote=true&theme=light"
+        />
+      </a>
+    </div>
   );
 }
 
@@ -221,7 +235,7 @@ export default function NewtabExtensionPage() {
                 weather, and focus, ready the moment you open a tab.
               </p>
               <StoreActions className="hero-store-actions" />
-              <ProductHuntBadge className="hero-product-hunt" />
+              <LaunchBadges />
               <p className="quiet">
                 Free · Open source · No account · Works offline for your data
               </p>
@@ -588,7 +602,7 @@ export default function NewtabExtensionPage() {
             </div>
             <div className="install-actions">
               <StoreActions />
-              <ProductHuntBadge />
+              <LaunchBadges />
               <a
                 className="button secondary source-link"
                 href="https://github.com/adhikari-dikshant/tab-extension"
