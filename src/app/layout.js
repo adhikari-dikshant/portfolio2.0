@@ -1,14 +1,33 @@
 import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
 
+const title =
+    "Dikshant Singh Adhikari | Software Engineer – Frontend (UI/UX Design & Development)";
+const description =
+    "Software Engineer – Frontend crafting interactive UI/UX — motion-rich interfaces, playful micro-interactions, and web experiences that feel alive.";
+
 export const metadata = {
     metadataBase: new URL("https://dikshant.xyz"),
-    title: "Dikshant Singh Adhikari | Frontend Developer & Web Designer",
-    description: "I'm a frontend developer and web designer based in Udaipur, Rajasthan. I create beautiful, responsive, and user-friendly websites that help businesses and individuals achieve their goals.",
+    title,
+    description,
     icons: {
         icon: "/favicon.svg",
         shortcut: "/favicon.svg",
         apple: "/favicon.svg",
+    },
+    openGraph: {
+        title,
+        description,
+        url: "https://dikshant.xyz",
+        siteName: "Dikshant Singh Adhikari",
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        creator: "@ikshwaku03",
     },
 };
 
